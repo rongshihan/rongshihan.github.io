@@ -6,7 +6,7 @@
 -->
 <html>
 <head>
-    <title>Miniport by HTML5 UP</title>
+    <title>rongshihan的个人网站</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
@@ -18,15 +18,16 @@
     <div class="container">
         <div class="row">
             <div class="col-4 col-5-large col-12-medium">
-                <span class="image fit"><img src="images/pic00.jpg" alt=""/></span>
+                <span class="image fit"><img src="images/header.jpg" alt=""/></span>
             </div>
             <div class="col-8 col-7-large col-12-medium">
                 <header>
-                    <h1>Hi. I'm <strong>Jane Doe</strong>.</h1>
+                    <h1>你好，我是 <strong>容仕翰</strong>，</h1>
                 </header>
-                <p>And this is <strong>Miniport</strong>, a free, fully responsive HTML5 site template designed by <a
-                        href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net">HTML5 UP</a> &amp;
-                    released under the <a href="http://html5up.net/license">CCA license</a>.</p>
+                <header>
+                    <h1>一个程序员，</h1>
+                </header>
+                <p>喜欢编程，天文，慢跑。</p>
             </div>
         </div>
     </div>
@@ -79,7 +80,7 @@
 
 <article id="graph2" class="wrapper style2">
     <div class="container">
-        <div id="wordCloud" style="width: 100%;height: 800px"></div>
+        <div id="wordCloud" style="width: 100%;height: 1200px"></div>
     </div>
 </article>
 
@@ -255,7 +256,7 @@
             focusNodeAdjacency: true,   // 是否在鼠标移到节点上的时候突出显示节点以及节点的边和邻接节点。[ default: false ]
             force: {                // 力引导布局相关的配置项，力引导布局是模拟弹簧电荷模型在每两个节点之间添加一个斥力，每条边的两个节点之间添加一个引力，每次迭代节点会在各个斥力和引力的作用下移动位置，多次迭代后节点会静止在一个受力平衡的位置，达到整个模型的能量最小化。
                 // 力引导布局的结果有良好的对称性和局部聚合性，也比较美观。
-                repulsion: 10000,            // [ default: 50 ]节点之间的斥力因子(关系对象之间的距离)。支持设置成数组表达斥力的范围，此时不同大小的值会线性映射到不同的斥力。值越大则斥力越大
+                repulsion: 300,            // [ default: 50 ]节点之间的斥力因子(关系对象之间的距离)。支持设置成数组表达斥力的范围，此时不同大小的值会线性映射到不同的斥力。值越大则斥力越大
                 //gravity : 0.00,           //节点受到的向中心的引力因子。该值越大节点越往中心点靠拢。
                 edgeLength: [10, 50]        // [ default: 30 ]边的两个节点之间的距离(关系对象连接线两端对象的距离,会根据关系对象值得大小来判断距离的大小)，
                                             // 这个距离也会受 repulsion。支持设置成数组表达边长的范围，此时不同大小的值会线性映射到不同的长度。值越小则长度越长。如下示例:
@@ -264,7 +265,7 @@
                 //因为力引导布局会在多次迭代后才会稳定，这个参数决定是否显示布局的迭代动画，在浏览器端节点数据较多（>100）的时候不建议关闭，布局过程会造成浏览器假死。
             },
 
-            edgeSymbol: ['none', 'arrow'],//设置边的样式，circle为实心圆，arrow为箭头
+            edgeSymbol: ['none', 'none'],//设置边的样式，circle为实心圆，arrow为箭头
 
             // 图的布局。[ default: 'none' ]
             // 'none' 不采用任何布局，使用节点中提供的 x， y 作为节点的位置。
@@ -289,7 +290,7 @@
             label: {                // 关系对象上的标签
                 normal: {
                     show: true,                 // 是否显示标签
-                    //position: "inside",         // 标签位置:'top''left''right''bottom''inside''insideLeft''insideRight''insideTop''insideBottom''insideTopLeft''insideBottomLeft''insideTopRight''insideBottomRight'
+                    position: "top",         // 标签位置:'top''left''right''bottom''inside''insideLeft''insideRight''insideTop''insideBottom''insideTopLeft''insideBottomLeft''insideTopRight''insideBottomRight'
                     textStyle: {                // 文本样式
                         //fontSize: 16
                     }
@@ -317,7 +318,71 @@
                 {
                     name: "Java",
                     draggable: true,
-                    symbolSize: 100,
+                    symbolSize: 50,
+                    itemStyle: {
+                        color: get_color()
+                    }
+                },
+                {
+                    name: "JavaSE",
+                    draggable: true,
+                    symbolSize: 30,
+                    itemStyle: {
+                        color: get_color()
+                    }
+                },
+                {
+                    name: "JavaEE",
+                    draggable: true,
+                    symbolSize: 30,
+                    itemStyle: {
+                        color: get_color()
+                    }
+                },
+                {
+                    name: "JDBC",
+                    draggable: true,
+                    symbolSize: 30,
+                    itemStyle: {
+                        color: get_color()
+                    }
+                },
+                {
+                    name: "数据库",
+                    draggable: true,
+                    symbolSize: 30,
+                    itemStyle: {
+                        color: get_color()
+                    }
+                },
+                {
+                    name: "JavaWeb",
+                    draggable: true,
+                    symbolSize: 30,
+                    itemStyle: {
+                        color: get_color()
+                    }
+                },
+                {
+                    name: "SpringBoot",
+                    draggable: true,
+                    symbolSize: 30,
+                    itemStyle: {
+                        color: get_color()
+                    }
+                },
+                {
+                    name: "微服务",
+                    draggable: true,
+                    symbolSize: 30,
+                    itemStyle: {
+                        color: get_color()
+                    }
+                },
+                {
+                    name: "分布式架构",
+                    draggable: true,
+                    symbolSize: 30,
                     itemStyle: {
                         color: get_color()
                     }
@@ -325,24 +390,135 @@
                 {
                     name: "Python",
                     draggable: true,
-                    symbolSize: 100,
+                    symbolSize: 50,
+                    itemStyle: {
+                        color: get_color()
+                    }
+                },
+                {
+                    name: "numpy",
+                    draggable: true,
+                    symbolSize: 30,
+                    itemStyle: {
+                        color: get_color()
+                    }
+                },
+                {
+                    name: "pandas",
+                    draggable: true,
+                    symbolSize: 30,
+                    itemStyle: {
+                        color: get_color()
+                    }
+                },
+                {
+                    name: "matplotlib",
+                    draggable: true,
+                    symbolSize: 30,
+                    itemStyle: {
+                        color: get_color()
+                    }
+                },
+                {
+                    name: "TensorFlow",
+                    draggable: true,
+                    symbolSize: 30,
+                    itemStyle: {
+                        color: get_color()
+                    }
+                },
+                {
+                    name: "PyTorch",
+                    draggable: true,
+                    symbolSize: 30,
                     itemStyle: {
                         color: get_color()
                     }
                 },
             ],
 
+            /*
             categories: [
                 {name: "Java"},
                 {name: "Python"},
             ],
+             */
 
             links: [
-
                 {
                     target: "Java",
                     source: "Python",
-                    category: "relation"
+                    // category: "relation"
+                },
+                {
+                    target: "Java",
+                    source: "JavaSE",
+                    // category: "relation"
+                },
+                {
+                    target: "Java",
+                    source: "JavaEE",
+                    // category: "relation"
+                },
+                {
+                    target: "Java",
+                    source: "JDBC",
+                    // category: "relation"
+                },
+                {
+                    target: "Java",
+                    source: "JavaWeb",
+                    // category: "relation"
+                },
+                {
+                    target: "Java",
+                    source: "数据库",
+                    // category: "relation"
+                },
+                {
+                    target: "Java",
+                    source: "JavaWeb",
+                    // category: "relation"
+                },
+                {
+                    target: "Java",
+                    source: "SpringBoot",
+                    // category: "relation"
+                },
+                {
+                    target: "Java",
+                    source: "微服务",
+                    // category: "relation"
+                },
+                {
+                    target: "Java",
+                    source: "分布式架构",
+                    // category: "relation"
+                },
+                {
+                    target: "Python",
+                    source: "numpy",
+                    // category: "relation"
+                },
+                {
+                    target: "Python",
+                    source: "pandas",
+                    // category: "relation"
+                },
+                {
+                    target: "Python",
+                    source: "matplotlib",
+                    // category: "relation"
+                },
+                {
+                    target: "Python",
+                    source: "TensorFlow",
+                    // category: "relation"
+                },
+                {
+                    target: "Python",
+                    source: "PyTorch",
+                    // category: "relation"
                 },
             ]
         }],
@@ -358,1039 +534,3785 @@
 <script type="text/javascript">
     const chart = echarts.init(document.getElementById('wordCloud'));
 
-    chart.setOption({
-        series: [{
-            type: 'wordCloud',
+    const maskImage = new Image();
+    maskImage.src = 'images/cloud4.png';
 
-            shape: 'circle',
+    maskImage.onload = function () {
+        chart.setOption({
+            series: [{
+                type: 'wordCloud',
 
-            // maskImage: maskImage,
+                // shape: 'circle',
 
-            left: 'center',
-            top: 'center',
-            width: '70%',
-            height: '80%',
-            right: null,
-            bottom: null,
+                maskImage: maskImage,
 
-            sizeRange: [12, 60],
+                left: 'center',
+                top: 'center',
+                width: '100%',
+                height: '100%',
+                right: null,
+                bottom: null,
 
-            rotationRange: [-90, 90],
-            rotationStep: 45,
+                sizeRange: [12, 60],
 
-            gridSize: 8,
+                rotationRange: [-90, 90],
+                rotationStep: 45,
 
-            drawOutOfBound: false,
+                gridSize: 8,
 
-            layoutAnimation: true,
+                drawOutOfBound: false,
 
-            textStyle: {
-                fontFamily: 'sans-serif',
-                fontWeight: 'bold',
-                color: function () {
-                    return 'rgb(' + [
-                        Math.round(Math.random() * 160),
-                        Math.round(Math.random() * 160),
-                        Math.round(Math.random() * 160)
-                    ].join(',') + ')';
-                }
-            },
-            emphasis: {
-                focus: 'self',
+                layoutAnimation: true,
 
                 textStyle: {
-                    shadowBlur: 10,
-                    shadowColor: '#333'
-                }
-            },
+                    fontFamily: 'sans-serif',
+                    fontWeight: 'bold',
+                    color: function () {
+                        return 'rgb(' + [
+                            Math.round(Math.random() * 160),
+                            Math.round(Math.random() * 160),
+                            Math.round(Math.random() * 160)
+                        ].join(',') + ')';
+                    }
+                },
+                emphasis: {
+                    focus: 'self',
 
-            data: [{
-                "name": "花鸟市场",
-                "value": 1446
-            },
-                {
-                    "name": "汽车",
-                    "value": 928
-                },
-                {
-                    "name": "视频",
-                    "value": 906
-                },
-                {
-                    "name": "电视",
-                    "value": 825
-                },
-                {
-                    "name": "Lover Boy 88",
-                    "value": 514
-                },
-                {
-                    "name": "动漫",
-                    "value": 486
-                },
-                {
-                    "name": "音乐",
-                    "value": 53
-                },
-                {
-                    "name": "直播",
-                    "value": 163
-                },
-                {
-                    "name": "广播电台",
-                    "value": 86
-                },
-                {
-                    "name": "戏曲曲艺",
-                    "value": 17
-                },
-                {
-                    "name": "演出票务",
-                    "value": 6
-                },
-                {
-                    "name": "给陌生的你听",
-                    "value": 1
-                },
-                {
-                    "name": "资讯",
-                    "value": 1437
-                },
-                {
-                    "name": "商业财经",
-                    "value": 422
-                },
-                {
-                    "name": "娱乐八卦",
-                    "value": 353
-                },
-                {
-                    "name": "军事",
-                    "value": 331
-                },
-                {
-                    "name": "科技资讯",
-                    "value": 313
-                },
-                {
-                    "name": "社会时政",
-                    "value": 307
-                },
-                {
-                    "name": "时尚",
-                    "value": 43
-                },
-                {
-                    "name": "网络奇闻",
-                    "value": 15
-                },
-                {
-                    "name": "旅游出行",
-                    "value": 438
-                },
-                {
-                    "name": "景点类型",
-                    "value": 957
-                },
-                {
-                    "name": "国内游",
-                    "value": 927
-                },
-                {
-                    "name": "远途出行方式",
-                    "value": 908
-                },
-                {
-                    "name": "酒店",
-                    "value": 693
-                },
-                {
-                    "name": "关注景点",
-                    "value": 611
-                },
-                {
-                    "name": "旅游网站偏好",
-                    "value": 512
-                },
-                {
-                    "name": "出国游",
-                    "value": 382
-                },
-                {
-                    "name": "交通票务",
-                    "value": 312
-                },
-                {
-                    "name": "旅游方式",
-                    "value": 187
-                },
-                {
-                    "name": "旅游主题",
-                    "value": 163
-                },
-                {
-                    "name": "港澳台",
-                    "value": 104
-                },
-                {
-                    "name": "本地周边游",
-                    "value": 3
-                },
-                {
-                    "name": "小卖家",
-                    "value": 1331
-                },
-                {
-                    "name": "全日制学校",
-                    "value": 941
-                },
-                {
-                    "name": "基础教育科目",
-                    "value": 585
-                },
-                {
-                    "name": "考试培训",
-                    "value": 473
-                },
-                {
-                    "name": "语言学习",
-                    "value": 358
-                },
-                {
-                    "name": "留学",
-                    "value": 246
-                },
-                {
-                    "name": "K12课程培训",
-                    "value": 207
-                },
-                {
-                    "name": "艺术培训",
-                    "value": 194
-                },
-                {
-                    "name": "技能培训",
-                    "value": 104
-                },
-                {
-                    "name": "IT培训",
-                    "value": 87
-                },
-                {
-                    "name": "高等教育专业",
-                    "value": 63
-                },
-                {
-                    "name": "家教",
-                    "value": 48
-                },
-                {
-                    "name": "体育培训",
-                    "value": 23
-                },
-                {
-                    "name": "职场培训",
-                    "value": 5
-                },
-                {
-                    "name": "金融财经",
-                    "value": 1328
-                },
-                {
-                    "name": "银行",
-                    "value": 765
-                },
-                {
-                    "name": "股票",
-                    "value": 452
-                },
-                {
-                    "name": "保险",
-                    "value": 415
-                },
-                {
-                    "name": "贷款",
-                    "value": 253
-                },
-                {
-                    "name": "基金",
-                    "value": 211
-                },
-                {
-                    "name": "信用卡",
-                    "value": 180
-                },
-                {
-                    "name": "外汇",
-                    "value": 138
-                },
-                {
-                    "name": "P2P",
-                    "value": 116
-                },
-                {
-                    "name": "贵金属",
-                    "value": 98
-                },
-                {
-                    "name": "债券",
-                    "value": 93
-                },
-                {
-                    "name": "网络理财",
-                    "value": 92
-                },
-                {
-                    "name": "信托",
-                    "value": 90
-                },
-                {
-                    "name": "征信",
-                    "value": 76
-                },
-                {
-                    "name": "期货",
-                    "value": 76
-                },
-                {
-                    "name": "公积金",
-                    "value": 40
-                },
-                {
-                    "name": "银行理财",
-                    "value": 36
-                },
-                {
-                    "name": "银行业务",
-                    "value": 30
-                },
-                {
-                    "name": "典当",
-                    "value": 7
-                },
-                {
-                    "name": "海外置业",
-                    "value": 1
-                },
-                {
-                    "name": "汽车",
-                    "value": 1309
-                },
-                {
-                    "name": "汽车档次",
-                    "value": 965
-                },
-                {
-                    "name": "汽车品牌",
-                    "value": 900
-                },
-                {
-                    "name": "汽车车型",
-                    "value": 727
-                },
-                {
-                    "name": "购车阶段",
-                    "value": 461
-                },
-                {
-                    "name": "二手车",
-                    "value": 309
-                },
-                {
-                    "name": "汽车美容",
-                    "value": 260
-                },
-                {
-                    "name": "新能源汽车",
-                    "value": 173
-                },
-                {
-                    "name": "汽车维修",
-                    "value": 155
-                },
-                {
-                    "name": "租车服务",
-                    "value": 136
-                },
-                {
-                    "name": "车展",
-                    "value": 121
-                },
-                {
-                    "name": "违章查询",
-                    "value": 76
-                },
-                {
-                    "name": "汽车改装",
-                    "value": 62
-                },
-                {
-                    "name": "汽车用品",
-                    "value": 37
-                },
-                {
-                    "name": "路况查询",
-                    "value": 32
-                },
-                {
-                    "name": "汽车保险",
-                    "value": 28
-                },
-                {
-                    "name": "陪驾代驾",
-                    "value": 4
-                },
-                {
-                    "name": "网络购物",
-                    "value": 1275
-                },
-                {
-                    "name": "做我的猫",
-                    "value": 1088
-                },
-                {
-                    "name": "只想要你知道",
-                    "value": 907
-                },
-                {
-                    "name": "团购",
-                    "value": 837
-                },
-                {
-                    "name": "比价",
-                    "value": 201
-                },
-                {
-                    "name": "海淘",
-                    "value": 195
-                },
-                {
-                    "name": "移动APP购物",
-                    "value": 179
-                },
-                {
-                    "name": "支付方式",
-                    "value": 119
-                },
-                {
-                    "name": "代购",
-                    "value": 43
-                },
-                {
-                    "name": "体育健身",
-                    "value": 1234
-                },
-                {
-                    "name": "体育赛事项目",
-                    "value": 802
-                },
-                {
-                    "name": "运动项目",
-                    "value": 405
-                },
-                {
-                    "name": "体育类赛事",
-                    "value": 337
-                },
-                {
-                    "name": "健身项目",
-                    "value": 199
-                },
-                {
-                    "name": "健身房健身",
-                    "value": 78
-                },
-                {
-                    "name": "运动健身",
-                    "value": 77
-                },
-                {
-                    "name": "家庭健身",
-                    "value": 36
-                },
-                {
-                    "name": "健身器械",
-                    "value": 29
-                },
-                {
-                    "name": "办公室健身",
-                    "value": 3
-                },
-                {
-                    "name": "商务服务",
-                    "value": 1201
-                },
-                {
-                    "name": "法律咨询",
-                    "value": 508
-                },
-                {
-                    "name": "化工材料",
-                    "value": 147
-                },
-                {
-                    "name": "广告服务",
-                    "value": 125
-                },
-                {
-                    "name": "会计审计",
-                    "value": 115
-                },
-                {
-                    "name": "人员招聘",
-                    "value": 101
-                },
-                {
-                    "name": "印刷打印",
-                    "value": 66
-                },
-                {
-                    "name": "知识产权",
-                    "value": 32
-                },
-                {
-                    "name": "翻译",
-                    "value": 22
-                },
-                {
-                    "name": "安全安保",
-                    "value": 9
-                },
-                {
-                    "name": "公关服务",
-                    "value": 8
-                },
-                {
-                    "name": "商旅服务",
-                    "value": 2
-                },
-                {
-                    "name": "展会服务",
-                    "value": 2
-                },
-                {
-                    "name": "特许经营",
-                    "value": 1
-                },
-                {
-                    "name": "休闲爱好",
-                    "value": 1169
-                },
-                {
-                    "name": "收藏",
-                    "value": 412
-                },
-                {
-                    "name": "摄影",
-                    "value": 393
-                },
-                {
-                    "name": "温泉",
-                    "value": 230
-                },
-                {
-                    "name": "博彩彩票",
-                    "value": 211
-                },
-                {
-                    "name": "美术",
-                    "value": 207
-                },
-                {
-                    "name": "书法",
-                    "value": 139
-                },
-                {
-                    "name": "DIY手工",
-                    "value": 75
-                },
-                {
-                    "name": "舞蹈",
-                    "value": 23
-                },
-                {
-                    "name": "钓鱼",
-                    "value": 21
-                },
-                {
-                    "name": "棋牌桌游",
-                    "value": 17
-                },
-                {
-                    "name": "KTV",
-                    "value": 6
-                },
-                {
-                    "name": "密室",
-                    "value": 5
-                },
-                {
-                    "name": "采摘",
-                    "value": 4
-                },
-                {
-                    "name": "电玩",
-                    "value": 1
-                },
-                {
-                    "name": "真人CS",
-                    "value": 1
-                },
-                {
-                    "name": "轰趴",
-                    "value": 1
-                },
-                {
-                    "name": "家电数码",
-                    "value": 1111
-                },
-                {
-                    "name": "手机",
-                    "value": 885
-                },
-                {
-                    "name": "电脑",
-                    "value": 543
-                },
-                {
-                    "name": "大家电",
-                    "value": 321
-                },
-                {
-                    "name": "家电关注品牌",
-                    "value": 253
-                },
-                {
-                    "name": "网络设备",
-                    "value": 162
-                },
-                {
-                    "name": "摄影器材",
-                    "value": 149
-                },
-                {
-                    "name": "影音设备",
-                    "value": 133
-                },
-                {
-                    "name": "办公数码设备",
-                    "value": 113
-                },
-                {
-                    "name": "生活电器",
-                    "value": 67
-                },
-                {
-                    "name": "厨房电器",
-                    "value": 54
-                },
-                {
-                    "name": "智能设备",
-                    "value": 45
-                },
-                {
-                    "name": "个人护理电器",
-                    "value": 22
-                },
-                {
-                    "name": "服饰鞋包",
-                    "value": 1047
-                },
-                {
-                    "name": "服装",
-                    "value": 566
-                },
-                {
-                    "name": "饰品",
-                    "value": 289
-                },
-                {
-                    "name": "鞋",
-                    "value": 184
-                },
-                {
-                    "name": "箱包",
-                    "value": 168
-                },
-                {
-                    "name": "奢侈品",
-                    "value": 137
-                },
-                {
-                    "name": "母婴亲子",
-                    "value": 1041
-                },
-                {
-                    "name": "孕婴保健",
-                    "value": 505
-                },
-                {
-                    "name": "母婴社区",
-                    "value": 299
-                },
-                {
-                    "name": "早教",
-                    "value": 103
-                },
-                {
-                    "name": "奶粉辅食",
-                    "value": 66
-                },
-                {
-                    "name": "童车童床",
-                    "value": 41
-                },
-                {
-                    "name": "关注品牌",
-                    "value": 271
-                },
-                {
-                    "name": "宝宝玩乐",
-                    "value": 30
-                },
-                {
-                    "name": "母婴护理服务",
-                    "value": 25
-                },
-                {
-                    "name": "纸尿裤湿巾",
-                    "value": 16
-                },
-                {
-                    "name": "妈妈用品",
-                    "value": 15
-                },
-                {
-                    "name": "宝宝起名",
-                    "value": 12
-                },
-                {
-                    "name": "童装童鞋",
-                    "value": 9
-                },
-                {
-                    "name": "胎教",
-                    "value": 8
-                },
-                {
-                    "name": "宝宝安全",
-                    "value": 1
-                },
-                {
-                    "name": "宝宝洗护用品",
-                    "value": 1
-                },
-                {
-                    "name": "软件应用",
-                    "value": 1018
-                },
-                {
-                    "name": "系统工具",
-                    "value": 896
-                },
-                {
-                    "name": "理财购物",
-                    "value": 440
-                },
-                {
-                    "name": "生活实用",
-                    "value": 365
-                },
-                {
-                    "name": "影音图像",
-                    "value": 256
-                },
-                {
-                    "name": "社交通讯",
-                    "value": 214
-                },
-                {
-                    "name": "手机美化",
-                    "value": 39
-                },
-                {
-                    "name": "办公学习",
-                    "value": 28
-                },
-                {
-                    "name": "应用市场",
-                    "value": 23
-                },
-                {
-                    "name": "母婴育儿",
-                    "value": 14
-                },
-                {
-                    "name": "游戏",
-                    "value": 946
-                },
-                {
-                    "name": "手机游戏",
-                    "value": 565
-                },
-                {
-                    "name": "PC游戏",
-                    "value": 353
-                },
-                {
-                    "name": "网页游戏",
-                    "value": 254
-                },
-                {
-                    "name": "游戏机",
-                    "value": 188
-                },
-                {
-                    "name": "模拟辅助",
-                    "value": 166
-                },
-                {
-                    "name": "个护美容",
-                    "value": 942
-                },
-                {
-                    "name": "护肤品",
-                    "value": 177
-                },
-                {
-                    "name": "彩妆",
-                    "value": 133
-                },
-                {
-                    "name": "美发",
-                    "value": 80
-                },
-                {
-                    "name": "香水",
-                    "value": 50
-                },
-                {
-                    "name": "个人护理",
-                    "value": 46
-                },
-                {
-                    "name": "美甲",
-                    "value": 26
-                },
-                {
-                    "name": "SPA美体",
-                    "value": 21
-                },
-                {
-                    "name": "花鸟萌宠",
-                    "value": 914
-                },
-                {
-                    "name": "绿植花卉",
-                    "value": 311
-                },
-                {
-                    "name": "狗",
-                    "value": 257
-                },
-                {
-                    "name": "其他宠物",
-                    "value": 131
-                },
-                {
-                    "name": "水族",
-                    "value": 125
-                },
-                {
-                    "name": "猫",
-                    "value": 122
-                },
-                {
-                    "name": "动物",
-                    "value": 81
-                },
-                {
-                    "name": "鸟",
-                    "value": 67
-                },
-                {
-                    "name": "宠物用品",
-                    "value": 41
-                },
-                {
-                    "name": "宠物服务",
-                    "value": 26
-                },
-                {
-                    "name": "书籍阅读",
-                    "value": 913
-                },
-                {
-                    "name": "网络小说",
-                    "value": 483
-                },
-                {
-                    "name": "关注书籍",
-                    "value": 128
-                },
-                {
-                    "name": "文学",
-                    "value": 105
-                },
-                {
-                    "name": "报刊杂志",
-                    "value": 77
-                },
-                {
-                    "name": "人文社科",
-                    "value": 22
-                },
-                {
-                    "name": "建材家居",
-                    "value": 907
-                },
-                {
-                    "name": "装修建材",
-                    "value": 644
-                },
-                {
-                    "name": "家具",
-                    "value": 273
-                },
-                {
-                    "name": "家居风格",
-                    "value": 187
-                },
-                {
-                    "name": "家居家装关注品牌",
-                    "value": 140
-                },
-                {
-                    "name": "家纺",
-                    "value": 107
-                },
-                {
-                    "name": "厨具",
-                    "value": 47
-                },
-                {
-                    "name": "灯具",
-                    "value": 43
-                },
-                {
-                    "name": "家居饰品",
-                    "value": 29
-                },
-                {
-                    "name": "家居日常用品",
-                    "value": 10
-                },
-                {
-                    "name": "生活服务",
-                    "value": 883
-                },
-                {
-                    "name": "物流配送",
-                    "value": 536
-                },
-                {
-                    "name": "家政服务",
-                    "value": 108
-                },
-                {
-                    "name": "摄影服务",
-                    "value": 49
-                },
-                {
-                    "name": "搬家服务",
-                    "value": 38
-                },
-                {
-                    "name": "物业维修",
-                    "value": 37
-                },
-                {
-                    "name": "婚庆服务",
-                    "value": 24
-                },
-                {
-                    "name": "二手回收",
-                    "value": 24
-                },
-                {
-                    "name": "鲜花配送",
-                    "value": 3
-                },
-                {
-                    "name": "维修服务",
-                    "value": 3
-                },
-                {
-                    "name": "殡葬服务",
-                    "value": 1
-                },
-                {
-                    "name": "求职创业",
-                    "value": 874
-                },
-                {
-                    "name": "创业",
-                    "value": 363
-                },
-                {
-                    "name": "目标职位",
-                    "value": 162
-                },
-                {
-                    "name": "目标行业",
-                    "value": 50
-                },
-                {
-                    "name": "兼职",
-                    "value": 21
-                },
-                {
-                    "name": "期望年薪",
-                    "value": 20
-                },
-                {
-                    "name": "实习",
-                    "value": 16
-                },
-                {
-                    "name": "雇主类型",
-                    "value": 10
-                },
-                {
-                    "name": "星座运势",
-                    "value": 789
-                },
-                {
-                    "name": "星座",
-                    "value": 316
-                },
-                {
-                    "name": "算命",
-                    "value": 303
-                },
-                {
-                    "name": "解梦",
-                    "value": 196
-                },
-                {
-                    "name": "风水",
-                    "value": 93
-                },
-                {
-                    "name": "面相分析",
-                    "value": 47
-                },
-                {
-                    "name": "手相",
-                    "value": 32
-                },
-                {
-                    "name": "公益",
-                    "value": 90
-                }
-            ]
-        }]
-    });
+                    textStyle: {
+                        shadowBlur: 10,
+                        shadowColor: '#333'
+                    }
+                },
+
+                data: [
+                    {
+                        name: '、',
+                        value: 13,
+                    },
+
+                    {
+                        name: '态',
+                        value: 1,
+                    },
+
+                    {
+                        name: '码',
+                        value: 2,
+                    },
+
+                    {
+                        name: '。',
+                        value: 56,
+                    },
+
+                    {
+                        name: '移动',
+                        value: 1,
+                    },
+
+                    {
+                        name: '译码器',
+                        value: 1,
+                    },
+
+                    {
+                        name: '调',
+                        value: 1,
+                    },
+
+                    {
+                        name: '域名',
+                        value: 2,
+                    },
+
+                    {
+                        name: '硬件',
+                        value: 1,
+                    },
+
+                    {
+                        name: '奇偶',
+                        value: 1,
+                    },
+
+                    {
+                        name: '12分',
+                        value: 2,
+                    },
+
+                    {
+                        name: '各',
+                        value: 1,
+                    },
+
+                    {
+                        name: '状态',
+                        value: 1,
+                    },
+
+                    {
+                        name: '草稿',
+                        value: 1,
+                    },
+
+                    {
+                        name: '堆',
+                        value: 1,
+                    },
+
+                    {
+                        name: '将',
+                        value: 1,
+                    },
+
+                    {
+                        name: '栈',
+                        value: 4,
+                    },
+
+                    {
+                        name: '互联',
+                        value: 1,
+                    },
+
+                    {
+                        name: '添加',
+                        value: 1,
+                    },
+
+                    {
+                        name: '而',
+                        value: 2,
+                    },
+
+                    {
+                        name: '广度',
+                        value: 1,
+                    },
+
+                    {
+                        name: '后',
+                        value: 3,
+                    },
+
+                    {
+                        name: '小',
+                        value: 4,
+                    },
+
+                    {
+                        name: '并发',
+                        value: 2,
+                    },
+
+                    {
+                        name: '向',
+                        value: 2,
+                    },
+
+                    {
+                        name: '算法',
+                        value: 7,
+                    },
+
+                    {
+                        name: '选择',
+                        value: 3,
+                    },
+
+                    {
+                        name: '少',
+                        value: 1,
+                    },
+
+                    {
+                        name: '树',
+                        value: 1,
+                    },
+
+                    {
+                        name: '2分',
+                        value: 1,
+                    },
+
+                    {
+                        name: '利用',
+                        value: 1,
+                    },
+
+                    {
+                        name: '0000',
+                        value: 1,
+                    },
+
+                    {
+                        name: '相同',
+                        value: 1,
+                    },
+
+                    {
+                        name: '913',
+                        value: 1,
+                    },
+
+                    {
+                        name: '“',
+                        value: 5,
+                    },
+
+                    {
+                        name: '”',
+                        value: 5,
+                    },
+
+                    {
+                        name: '解决',
+                        value: 2,
+                    },
+
+                    {
+                        name: '考试',
+                        value: 2,
+                    },
+
+                    {
+                        name: '一个',
+                        value: 15,
+                    },
+
+                    {
+                        name: '操作',
+                        value: 2,
+                    },
+
+                    {
+                        name: '窗口',
+                        value: 2,
+                    },
+
+                    {
+                        name: '…',
+                        value: 1,
+                    },
+
+                    {
+                        name: '正在',
+                        value: 1,
+                    },
+
+                    {
+                        name: '含',
+                        value: 1,
+                    },
+
+                    {
+                        name: '1470',
+                        value: 1,
+                    },
+
+                    {
+                        name: '环路',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'ipv',
+                        value: 1,
+                    },
+
+                    {
+                        name: '33.3',
+                        value: 1,
+                    },
+
+                    {
+                        name: '创建',
+                        value: 3,
+                    },
+
+                    {
+                        name: '每个',
+                        value: 4,
+                    },
+
+                    {
+                        name: '元素',
+                        value: 3,
+                    },
+
+                    {
+                        name: '128个字',
+                        value: 1,
+                    },
+
+                    {
+                        name: '2个',
+                        value: 2,
+                    },
+
+                    {
+                        name: '假定',
+                        value: 2,
+                    },
+
+                    {
+                        name: 'dacefbg',
+                        value: 1,
+                    },
+
+                    {
+                        name: '数计',
+                        value: 1,
+                    },
+
+                    {
+                        name: '以太网',
+                        value: 1,
+                    },
+
+                    {
+                        name: '范围',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'llink',
+                        value: 3,
+                    },
+
+                    {
+                        name: '求',
+                        value: 3,
+                    },
+
+                    {
+                        name: '1000',
+                        value: 1,
+                    },
+
+                    {
+                        name: '行',
+                        value: 3,
+                    },
+
+                    {
+                        name: '遍',
+                        value: 7,
+                    },
+
+                    {
+                        name: '决定',
+                        value: 1,
+                    },
+
+                    {
+                        name: '传输率',
+                        value: 1,
+                    },
+
+                    {
+                        name: '串行',
+                        value: 1,
+                    },
+
+                    {
+                        name: '相联',
+                        value: 3,
+                    },
+
+                    {
+                        name: '采用',
+                        value: 4,
+                    },
+
+                    {
+                        name: '启动',
+                        value: 1,
+                    },
+
+                    {
+                        name: '道',
+                        value: 1,
+                    },
+
+                    {
+                        name: '高速',
+                        value: 1,
+                    },
+
+                    {
+                        name: '只有',
+                        value: 1,
+                    },
+
+                    {
+                        name: '主机',
+                        value: 1,
+                    },
+
+                    {
+                        name: '3个',
+                        value: 1,
+                    },
+
+                    {
+                        name: '存储',
+                        value: 11,
+                    },
+
+                    {
+                        name: '第一',
+                        value: 1,
+                    },
+
+                    {
+                        name: '假设',
+                        value: 2,
+                    },
+
+                    {
+                        name: 'a',
+                        value: 55,
+                    },
+
+                    {
+                        name: 'cd',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'b',
+                        value: 49,
+                    },
+
+                    {
+                        name: 'c',
+                        value: 51,
+                    },
+
+                    {
+                        name: '4列',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'd',
+                        value: 47,
+                    },
+
+                    {
+                        name: 'e',
+                        value: 10,
+                    },
+
+                    {
+                        name: '桥',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'f',
+                        value: 8,
+                    },
+
+                    {
+                        name: 'g',
+                        value: 2,
+                    },
+
+                    {
+                        name: '表',
+                        value: 7,
+                    },
+
+                    {
+                        name: 'h',
+                        value: 2,
+                    },
+
+                    {
+                        name: 'i',
+                        value: 7,
+                    },
+
+                    {
+                        name: 'j',
+                        value: 6,
+                    },
+
+                    {
+                        name: 'k',
+                        value: 3,
+                    },
+
+                    {
+                        name: 'm',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'n',
+                        value: 24,
+                    },
+
+                    {
+                        name: 'p',
+                        value: 19,
+                    },
+
+                    {
+                        name: 'q',
+                        value: 5,
+                    },
+
+                    {
+                        name: '同一个',
+                        value: 1,
+                    },
+
+                    {
+                        name: '许多',
+                        value: 1,
+                    },
+
+                    {
+                        name: 't',
+                        value: 2,
+                    },
+
+                    {
+                        name: '主存',
+                        value: 3,
+                    },
+
+                    {
+                        name: '页',
+                        value: 16,
+                    },
+
+                    {
+                        name: 'v',
+                        value: 7,
+                    },
+
+                    {
+                        name: '顶',
+                        value: 1,
+                    },
+
+                    {
+                        name: '4个',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'x',
+                        value: 8,
+                    },
+
+                    {
+                        name: '问题',
+                        value: 5,
+                    },
+
+                    {
+                        name: '传输',
+                        value: 4,
+                    },
+
+                    {
+                        name: '方式',
+                        value: 6,
+                    },
+
+                    {
+                        name: '两列',
+                        value: 1,
+                    },
+
+                    {
+                        name: '{',
+                        value: 3,
+                    },
+
+                    {
+                        name: '11101111',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'abcdefg',
+                        value: 2,
+                    },
+
+                    {
+                        name: '4999',
+                        value: 1,
+                    },
+
+                    {
+                        name: '948',
+                        value: 1,
+                    },
+
+                    {
+                        name: '命',
+                        value: 1,
+                    },
+
+                    {
+                        name: '二进制',
+                        value: 2,
+                    },
+
+                    {
+                        name: '最佳',
+                        value: 1,
+                    },
+
+                    {
+                        name: '5列',
+                        value: 1,
+                    },
+
+                    {
+                        name: '综合',
+                        value: 10,
+                    },
+
+                    {
+                        name: '单元',
+                        value: 1,
+                    },
+
+                    {
+                        name: '检测',
+                        value: 2,
+                    },
+
+                    {
+                        name: '1022',
+                        value: 1,
+                    },
+
+                    {
+                        name: '全部',
+                        value: 1,
+                    },
+
+                    {
+                        name: '管理',
+                        value: 5,
+                    },
+
+                    {
+                        name: '说明',
+                        value: 1,
+                    },
+
+                    {
+                        name: '和',
+                        value: 18,
+                    },
+
+                    {
+                        name: '包括',
+                        value: 1,
+                    },
+
+                    {
+                        name: '交换机',
+                        value: 3,
+                    },
+
+                    {
+                        name: '两个',
+                        value: 2,
+                    },
+
+                    {
+                        name: '题',
+                        value: 4,
+                    },
+
+                    {
+                        name: '不能',
+                        value: 1,
+                    },
+
+                    {
+                        name: '并行',
+                        value: 1,
+                    },
+
+                    {
+                        name: '磁头',
+                        value: 2,
+                    },
+
+                    {
+                        name: '技术',
+                        value: 4,
+                    },
+
+                    {
+                        name: '信息',
+                        value: 3,
+                    },
+
+                    {
+                        name: '释放',
+                        value: 2,
+                    },
+
+                    {
+                        name: '冗余',
+                        value: 1,
+                    },
+
+                    {
+                        name: '其余',
+                        value: 1,
+                    },
+
+                    {
+                        name: '饥饿',
+                        value: 1,
+                    },
+
+                    {
+                        name: '被',
+                        value: 1,
+                    },
+
+                    {
+                        name: '学位',
+                        value: 1,
+                    },
+
+                    {
+                        name: '7分',
+                        value: 2,
+                    },
+
+                    {
+                        name: '指令',
+                        value: 5,
+                    },
+
+                    {
+                        name: '1026',
+                        value: 1,
+                    },
+
+                    {
+                        name: '点',
+                        value: 6,
+                    },
+
+                    {
+                        name: '分时',
+                        value: 1,
+                    },
+
+                    {
+                        name: '图可',
+                        value: 1,
+                    },
+
+                    {
+                        name: '基数',
+                        value: 1,
+                    },
+
+                    {
+                        name: '驱动器',
+                        value: 2,
+                    },
+
+                    {
+                        name: '数值',
+                        value: 2,
+                    },
+
+                    {
+                        name: '特性',
+                        value: 1,
+                    },
+
+                    {
+                        name: '如下',
+                        value: 1,
+                    },
+
+                    {
+                        name: '所有',
+                        value: 3,
+                    },
+
+                    {
+                        name: '要为',
+                        value: 1,
+                    },
+
+                    {
+                        name: '1042',
+                        value: 1,
+                    },
+
+                    {
+                        name: '所指',
+                        value: 2,
+                    },
+
+                    {
+                        name: '1040',
+                        value: 1,
+                    },
+
+                    {
+                        name: '所需',
+                        value: 2,
+                    },
+
+                    {
+                        name: '纠正',
+                        value: 1,
+                    },
+
+                    {
+                        name: '8分',
+                        value: 4,
+                    },
+
+                    {
+                        name: '32位',
+                        value: 1,
+                    },
+
+                    {
+                        name: '同步',
+                        value: 2,
+                    },
+
+                    {
+                        name: '消费者',
+                        value: 1,
+                    },
+
+                    {
+                        name: '可以',
+                        value: 3,
+                    },
+
+                    {
+                        name: '生成',
+                        value: 1,
+                    },
+
+                    {
+                        name: '三角',
+                        value: 2,
+                    },
+
+                    {
+                        name: '交换网',
+                        value: 1,
+                    },
+
+                    {
+                        name: '差错',
+                        value: 1,
+                    },
+
+                    {
+                        name: '16384',
+                        value: 1,
+                    },
+
+                    {
+                        name: '确定',
+                        value: 2,
+                    },
+
+                    {
+                        name: 'fifo',
+                        value: 1,
+                    },
+
+                    {
+                        name: '10次',
+                        value: 2,
+                    },
+
+                    {
+                        name: '注',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'spooling',
+                        value: 1,
+                    },
+
+                    {
+                        name: '做出',
+                        value: 1,
+                    },
+
+                    {
+                        name: '传送',
+                        value: 3,
+                    },
+
+                    {
+                        name: '150分',
+                        value: 1,
+                    },
+
+                    {
+                        name: '分别',
+                        value: 3,
+                    },
+
+                    {
+                        name: '抢占',
+                        value: 2,
+                    },
+
+                    {
+                        name: '2015',
+                        value: 1,
+                    },
+
+                    {
+                        name: '多任务',
+                        value: 3,
+                    },
+
+                    {
+                        name: 'dma',
+                        value: 1,
+                    },
+
+                    {
+                        name: '都',
+                        value: 2,
+                    },
+
+                    {
+                        name: '一维',
+                        value: 1,
+                    },
+
+                    {
+                        name: '能',
+                        value: 1,
+                    },
+
+                    {
+                        name: '链',
+                        value: 3,
+                    },
+
+                    {
+                        name: '锁',
+                        value: 2,
+                    },
+
+                    {
+                        name: '最后',
+                        value: 2,
+                    },
+
+                    {
+                        name: '之间',
+                        value: 2,
+                    },
+
+                    {
+                        name: '最小',
+                        value: 3,
+                    },
+
+                    {
+                        name: 'preemptive',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'rlink',
+                        value: 8,
+                    },
+
+                    {
+                        name: 'dram',
+                        value: 1,
+                    },
+
+                    {
+                        name: '设备',
+                        value: 2,
+                    },
+
+                    {
+                        name: '多',
+                        value: 6,
+                    },
+
+                    {
+                        name: '对称',
+                        value: 1,
+                    },
+
+                    {
+                        name: '出发',
+                        value: 2,
+                    },
+
+                    {
+                        name: '后面',
+                        value: 1,
+                    },
+
+                    {
+                        name: '携带',
+                        value: 1,
+                    },
+
+                    {
+                        name: '优先权',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'ip',
+                        value: 5,
+                    },
+
+                    {
+                        name: '因而',
+                        value: 1,
+                    },
+
+                    {
+                        name: '三列',
+                        value: 1,
+                    },
+
+                    {
+                        name: '用',
+                        value: 2,
+                    },
+
+                    {
+                        name: '不再',
+                        value: 1,
+                    },
+
+                    {
+                        name: '中断',
+                        value: 1,
+                    },
+
+                    {
+                        name: '更新',
+                        value: 1,
+                    },
+
+                    {
+                        name: '由',
+                        value: 2,
+                    },
+
+                    {
+                        name: '排序',
+                        value: 3,
+                    },
+
+                    {
+                        name: '多项式',
+                        value: 1,
+                    },
+
+                    {
+                        name: '变成',
+                        value: 2,
+                    },
+
+                    {
+                        name: '路由',
+                        value: 5,
+                    },
+
+                    {
+                        name: '交换',
+                        value: 3,
+                    },
+
+                    {
+                        name: '服务',
+                        value: 4,
+                    },
+
+                    {
+                        name: '优先',
+                        value: 4,
+                    },
+
+                    {
+                        name: '改',
+                        value: 1,
+                    },
+
+                    {
+                        name: '示',
+                        value: 1,
+                    },
+
+                    {
+                        name: '画',
+                        value: 1,
+                    },
+
+                    {
+                        name: '容量',
+                        value: 2,
+                    },
+
+                    {
+                        name: '余数',
+                        value: 1,
+                    },
+
+                    {
+                        name: '每次',
+                        value: 1,
+                    },
+
+                    {
+                        name: '元',
+                        value: 1,
+                    },
+
+                    {
+                        name: '经常',
+                        value: 1,
+                    },
+
+                    {
+                        name: '顺序',
+                        value: 5,
+                    },
+
+                    {
+                        name: '上下文',
+                        value: 1,
+                    },
+
+                    {
+                        name: '先',
+                        value: 3,
+                    },
+
+                    {
+                        name: '三个',
+                        value: 1,
+                    },
+
+                    {
+                        name: '循环',
+                        value: 6,
+                    },
+
+                    {
+                        name: '系统',
+                        value: 2,
+                    },
+
+                    {
+                        name: '之中',
+                        value: 1,
+                    },
+
+                    {
+                        name: '公用电话',
+                        value: 1,
+                    },
+
+                    {
+                        name: '通常',
+                        value: 1,
+                    },
+
+                    {
+                        name: '等待',
+                        value: 2,
+                    },
+
+                    {
+                        name: '依赖',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'top',
+                        value: 13,
+                    },
+
+                    {
+                        name: 'kb',
+                        value: 1,
+                    },
+
+                    {
+                        name: '目的',
+                        value: 2,
+                    },
+
+                    {
+                        name: '总是',
+                        value: 1,
+                    },
+
+                    {
+                        name: '控制器',
+                        value: 2,
+                    },
+
+                    {
+                        name: '必须',
+                        value: 1,
+                    },
+
+                    {
+                        name: '互斥',
+                        value: 2,
+                    },
+
+                    {
+                        name: '所得',
+                        value: 1,
+                    },
+
+                    {
+                        name: '序列',
+                        value: 6,
+                    },
+
+                    {
+                        name: '下列',
+                        value: 3,
+                    },
+
+                    {
+                        name: '入',
+                        value: 1,
+                    },
+
+                    {
+                        name: '时钟',
+                        value: 1,
+                    },
+
+                    {
+                        name: '正确',
+                        value: 4,
+                    },
+
+                    {
+                        name: '转换',
+                        value: 1,
+                    },
+
+                    {
+                        name: '芯片',
+                        value: 1,
+                    },
+
+                    {
+                        name: '全',
+                        value: 1,
+                    },
+
+                    {
+                        name: '特点',
+                        value: 1,
+                    },
+
+                    {
+                        name: '信号量',
+                        value: 1,
+                    },
+
+                    {
+                        name: '数',
+                        value: 1,
+                    },
+
+                    {
+                        name: '命中率',
+                        value: 1,
+                    },
+
+                    {
+                        name: '共',
+                        value: 10,
+                    },
+
+                    {
+                        name: '得到',
+                        value: 3,
+                    },
+
+                    {
+                        name: '考生',
+                        value: 1,
+                    },
+
+                    {
+                        name: '300',
+                        value: 1,
+                    },
+
+                    {
+                        name: '分组',
+                        value: 5,
+                    },
+
+                    {
+                        name: '两次',
+                        value: 1,
+                    },
+
+                    {
+                        name: '302',
+                        value: 1,
+                    },
+
+                    {
+                        name: '其',
+                        value: 1,
+                    },
+
+                    {
+                        name: '现在',
+                        value: 2,
+                    },
+
+                    {
+                        name: 'nonpreemptive',
+                        value: 1,
+                    },
+
+                    {
+                        name: '海',
+                        value: 1,
+                    },
+
+                    {
+                        name: '存储器',
+                        value: 12,
+                    },
+
+                    {
+                        name: '子集',
+                        value: 1,
+                    },
+
+                    {
+                        name: '长',
+                        value: 2,
+                    },
+
+                    {
+                        name: '进程',
+                        value: 20,
+                    },
+
+                    {
+                        name: '要',
+                        value: 3,
+                    },
+
+                    {
+                        name: '一律',
+                        value: 1,
+                    },
+
+                    {
+                        name: '选项',
+                        value: 2,
+                    },
+
+                    {
+                        name: '如',
+                        value: 1,
+                    },
+
+                    {
+                        name: '项目',
+                        value: 1,
+                    },
+
+                    {
+                        name: '越',
+                        value: 1,
+                    },
+
+                    {
+                        name: '对角线',
+                        value: 1,
+                    },
+
+                    {
+                        name: '再',
+                        value: 1,
+                    },
+
+                    {
+                        name: '阻塞',
+                        value: 2,
+                    },
+
+                    {
+                        name: '调用',
+                        value: 1,
+                    },
+
+                    {
+                        name: '快速',
+                        value: 2,
+                    },
+
+                    {
+                        name: '写',
+                        value: 2,
+                    },
+
+                    {
+                        name: '符号',
+                        value: 1,
+                    },
+
+                    {
+                        name: '趟',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'mm',
+                        value: 1,
+                    },
+
+                    {
+                        name: '网络',
+                        value: 7,
+                    },
+
+                    {
+                        name: '总的',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'ms',
+                        value: 3,
+                    },
+
+                    {
+                        name: 'spf',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'cpu',
+                        value: 7,
+                    },
+
+                    {
+                        name: '交叉',
+                        value: 1,
+                    },
+
+                    {
+                        name: '符合',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'fffh',
+                        value: 2,
+                    },
+
+                    {
+                        name: '研究生',
+                        value: 1,
+                    },
+
+                    {
+                        name: '轮转',
+                        value: 2,
+                    },
+
+                    {
+                        name: '对应',
+                        value: 1,
+                    },
+
+                    {
+                        name: '新',
+                        value: 2,
+                    },
+
+                    {
+                        name: '200',
+                        value: 1,
+                    },
+
+                    {
+                        name: '记录',
+                        value: 2,
+                    },
+
+                    {
+                        name: '隔离',
+                        value: 1,
+                    },
+
+                    {
+                        name: '招收',
+                        value: 1,
+                    },
+
+                    {
+                        name: '编程',
+                        value: 2,
+                    },
+
+                    {
+                        name: '主频',
+                        value: 1,
+                    },
+
+                    {
+                        name: '对于',
+                        value: 1,
+                    },
+
+                    {
+                        name: '发来',
+                        value: 1,
+                    },
+
+                    {
+                        name: '表示',
+                        value: 3,
+                    },
+
+                    {
+                        name: '二叉树',
+                        value: 4,
+                    },
+
+                    {
+                        name: 'ns',
+                        value: 3,
+                    },
+
+                    {
+                        name: '提供',
+                        value: 3,
+                    },
+
+                    {
+                        name: '不是',
+                        value: 2,
+                    },
+
+                    {
+                        name: '位置',
+                        value: 2,
+                    },
+
+                    {
+                        name: '包含',
+                        value: 1,
+                    },
+
+                    {
+                        name: '种',
+                        value: 1,
+                    },
+
+                    {
+                        name: '双向',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'rom',
+                        value: 1,
+                    },
+
+                    {
+                        name: '210',
+                        value: 1,
+                    },
+
+                    {
+                        name: '拓扑',
+                        value: 1,
+                    },
+
+                    {
+                        name: '秒',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'crc',
+                        value: 1,
+                    },
+
+                    {
+                        name: '关键字',
+                        value: 1,
+                    },
+
+                    {
+                        name: '资源',
+                        value: 1,
+                    },
+
+                    {
+                        name: '足够',
+                        value: 1,
+                    },
+
+                    {
+                        name: '无',
+                        value: 3,
+                    },
+
+                    {
+                        name: '错误',
+                        value: 3,
+                    },
+
+                    {
+                        name: '512道',
+                        value: 1,
+                    },
+
+                    {
+                        name: '定义',
+                        value: 1,
+                    },
+
+                    {
+                        name: '探测',
+                        value: 1,
+                    },
+
+                    {
+                        name: '毫米',
+                        value: 1,
+                    },
+
+                    {
+                        name: '总线',
+                        value: 1,
+                    },
+
+                    {
+                        name: '映射',
+                        value: 3,
+                    },
+
+                    {
+                        name: '程序',
+                        value: 3,
+                    },
+
+                    {
+                        name: '问',
+                        value: 2,
+                    },
+
+                    {
+                        name: '积',
+                        value: 1,
+                    },
+
+                    {
+                        name: '100',
+                        value: 2,
+                    },
+
+                    {
+                        name: '间',
+                        value: 4,
+                    },
+
+                    {
+                        name: '转发',
+                        value: 3,
+                    },
+
+                    {
+                        name: '发现',
+                        value: 2,
+                    },
+
+                    {
+                        name: '时',
+                        value: 3,
+                    },
+
+                    {
+                        name: '十进制',
+                        value: 1,
+                    },
+
+                    {
+                        name: '滑动',
+                        value: 1,
+                    },
+
+                    {
+                        name: '出',
+                        value: 2,
+                    },
+
+                    {
+                        name: 'adcfegb',
+                        value: 1,
+                    },
+
+                    {
+                        name: '一',
+                        value: 1,
+                    },
+
+                    {
+                        name: '处于',
+                        value: 1,
+                    },
+
+                    {
+                        name: '05',
+                        value: 5,
+                    },
+
+                    {
+                        name: '上',
+                        value: 7,
+                    },
+
+                    {
+                        name: '下',
+                        value: 3,
+                    },
+
+                    {
+                        name: '不',
+                        value: 2,
+                    },
+
+                    {
+                        name: '描述',
+                        value: 1,
+                    },
+
+                    {
+                        name: '与',
+                        value: 2,
+                    },
+
+                    {
+                        name: '80分',
+                        value: 1,
+                    },
+
+                    {
+                        name: '自身',
+                        value: 1,
+                    },
+
+                    {
+                        name: '且',
+                        value: 1,
+                    },
+
+                    {
+                        name: '10道',
+                        value: 1,
+                    },
+
+                    {
+                        name: '或',
+                        value: 1,
+                    },
+
+                    {
+                        name: '列',
+                        value: 1,
+                    },
+
+                    {
+                        name: '则',
+                        value: 6,
+                    },
+
+                    {
+                        name: '地址',
+                        value: 16,
+                    },
+
+                    {
+                        name: '网络层',
+                        value: 1,
+                    },
+
+                    {
+                        name: '0行',
+                        value: 1,
+                    },
+
+                    {
+                        name: '二次',
+                        value: 1,
+                    },
+
+                    {
+                        name: '解析',
+                        value: 4,
+                    },
+
+                    {
+                        name: '访问',
+                        value: 8,
+                    },
+
+                    {
+                        name: '10',
+                        value: 4,
+                    },
+
+                    {
+                        name: '五个',
+                        value: 3,
+                    },
+
+                    {
+                        name: '11',
+                        value: 5,
+                    },
+
+                    {
+                        name: '12',
+                        value: 1,
+                    },
+
+                    {
+                        name: '13',
+                        value: 6,
+                    },
+
+                    {
+                        name: 'cache',
+                        value: 7,
+                    },
+
+                    {
+                        name: '转速',
+                        value: 1,
+                    },
+
+                    {
+                        name: '14',
+                        value: 2,
+                    },
+
+                    {
+                        name: '15',
+                        value: 2,
+                    },
+
+                    {
+                        name: '16',
+                        value: 4,
+                    },
+
+                    {
+                        name: '17',
+                        value: 6,
+                    },
+
+                    {
+                        name: '18',
+                        value: 5,
+                    },
+
+                    {
+                        name: '19',
+                        value: 1,
+                    },
+
+                    {
+                        name: '目录',
+                        value: 1,
+                    },
+
+                    {
+                        name: '个',
+                        value: 7,
+                    },
+
+                    {
+                        name: 'csma',
+                        value: 1,
+                    },
+
+                    {
+                        name: '最大',
+                        value: 1,
+                    },
+
+                    {
+                        name: '攻读',
+                        value: 1,
+                    },
+
+                    {
+                        name: '中',
+                        value: 30,
+                    },
+
+                    {
+                        name: '是',
+                        value: 39,
+                    },
+
+                    {
+                        name: '到',
+                        value: 7,
+                    },
+
+                    {
+                        name: '方法',
+                        value: 5,
+                    },
+
+                    {
+                        name: '切换',
+                        value: 1,
+                    },
+
+                    {
+                        name: '填充',
+                        value: 1,
+                    },
+
+                    {
+                        name: '稳',
+                        value: 1,
+                    },
+
+                    {
+                        name: '功能',
+                        value: 2,
+                    },
+
+                    {
+                        name: '协议',
+                        value: 4,
+                    },
+
+                    {
+                        name: '作业',
+                        value: 1,
+                    },
+
+                    {
+                        name: '128',
+                        value: 2,
+                    },
+
+                    {
+                        name: '磁盘',
+                        value: 8,
+                    },
+
+                    {
+                        name: '为',
+                        value: 16,
+                    },
+
+                    {
+                        name: '多少',
+                        value: 4,
+                    },
+
+                    {
+                        name: '单独',
+                        value: 1,
+                    },
+
+                    {
+                        name: '接收',
+                        value: 2,
+                    },
+
+                    {
+                        name: '20',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'mhz',
+                        value: 1,
+                    },
+
+                    {
+                        name: '21',
+                        value: 1,
+                    },
+
+                    {
+                        name: '22',
+                        value: 1,
+                    },
+
+                    {
+                        name: '分析',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'rr',
+                        value: 1,
+                    },
+
+                    {
+                        name: '23',
+                        value: 5,
+                    },
+
+                    {
+                        name: '24',
+                        value: 1,
+                    },
+
+                    {
+                        name: '文件',
+                        value: 2,
+                    },
+
+                    {
+                        name: '25',
+                        value: 1,
+                    },
+
+                    {
+                        name: '优先级',
+                        value: 6,
+                    },
+
+                    {
+                        name: '26',
+                        value: 1,
+                    },
+
+                    {
+                        name: '27',
+                        value: 1,
+                    },
+
+                    {
+                        name: '称为',
+                        value: 2,
+                    },
+
+                    {
+                        name: '28',
+                        value: 1,
+                    },
+
+                    {
+                        name: '片',
+                        value: 3,
+                    },
+
+                    {
+                        name: '29',
+                        value: 1,
+                    },
+
+                    {
+                        name: '内在',
+                        value: 1,
+                    },
+
+                    {
+                        name: '70分',
+                        value: 1,
+                    },
+
+                    {
+                        name: '前',
+                        value: 1,
+                    },
+
+                    {
+                        name: '给出',
+                        value: 5,
+                    },
+
+                    {
+                        name: '哈希',
+                        value: 3,
+                    },
+
+                    {
+                        name: '130',
+                        value: 1,
+                    },
+
+                    {
+                        name: '如果',
+                        value: 1,
+                    },
+
+                    {
+                        name: '试卷',
+                        value: 1,
+                    },
+
+                    {
+                        name: '动态',
+                        value: 1,
+                    },
+
+                    {
+                        name: '刷新',
+                        value: 1,
+                    },
+
+                    {
+                        name: '根据',
+                        value: 4,
+                    },
+
+                    {
+                        name: '只能',
+                        value: 1,
+                    },
+
+                    {
+                        name: '发送',
+                        value: 2,
+                    },
+
+                    {
+                        name: '虚',
+                        value: 1,
+                    },
+
+                    {
+                        name: '哈希法',
+                        value: 1,
+                    },
+
+                    {
+                        name: '生产者',
+                        value: 1,
+                    },
+
+                    {
+                        name: '30',
+                        value: 2,
+                    },
+
+                    {
+                        name: 'key',
+                        value: 2,
+                    },
+
+                    {
+                        name: 'arp',
+                        value: 1,
+                    },
+
+                    {
+                        name: '31',
+                        value: 1,
+                    },
+
+                    {
+                        name: '也',
+                        value: 1,
+                    },
+
+                    {
+                        name: '32',
+                        value: 2,
+                    },
+
+                    {
+                        name: '格式',
+                        value: 1,
+                    },
+
+                    {
+                        name: '33',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'arq',
+                        value: 1,
+                    },
+
+                    {
+                        name: '34',
+                        value: 1,
+                    },
+
+                    {
+                        name: '35',
+                        value: 1,
+                    },
+
+                    {
+                        name: '机器',
+                        value: 2,
+                    },
+
+                    {
+                        name: '36',
+                        value: 1,
+                    },
+
+                    {
+                        name: '37',
+                        value: 1,
+                    },
+
+                    {
+                        name: '38',
+                        value: 2,
+                    },
+
+                    {
+                        name: 'fcfs',
+                        value: 2,
+                    },
+
+                    {
+                        name: '39',
+                        value: 1,
+                    },
+
+                    {
+                        name: '节点',
+                        value: 1,
+                    },
+
+                    {
+                        name: '执',
+                        value: 1,
+                    },
+
+                    {
+                        name: '用于',
+                        value: 2,
+                    },
+
+                    {
+                        name: '任一',
+                        value: 1,
+                    },
+
+                    {
+                        name: '指针',
+                        value: 1,
+                    },
+
+                    {
+                        name: '保护',
+                        value: 1,
+                    },
+
+                    {
+                        name: '运行',
+                        value: 3,
+                    },
+
+                    {
+                        name: '专业',
+                        value: 9,
+                    },
+
+                    {
+                        name: '差不多',
+                        value: 1,
+                    },
+
+                    {
+                        name: '年',
+                        value: 1,
+                    },
+
+                    {
+                        name: '速度',
+                        value: 1,
+                    },
+
+                    {
+                        name: '并',
+                        value: 2,
+                    },
+
+                    {
+                        name: '3行',
+                        value: 1,
+                    },
+
+                    {
+                        name: '内存',
+                        value: 3,
+                    },
+
+                    {
+                        name: '空',
+                        value: 3,
+                    },
+
+                    {
+                        name: '40',
+                        value: 2,
+                    },
+
+                    {
+                        name: '基地',
+                        value: 1,
+                    },
+
+                    {
+                        name: '41',
+                        value: 2,
+                    },
+
+                    {
+                        name: '42',
+                        value: 6,
+                    },
+
+                    {
+                        name: '43',
+                        value: 1,
+                    },
+
+                    {
+                        name: '44',
+                        value: 1,
+                    },
+
+                    {
+                        name: '45',
+                        value: 2,
+                    },
+
+                    {
+                        name: '46',
+                        value: 7,
+                    },
+
+                    {
+                        name: '47',
+                        value: 2,
+                    },
+
+                    {
+                        name: '的',
+                        value: 97,
+                    },
+
+                    {
+                        name: '48',
+                        value: 2,
+                    },
+
+                    {
+                        name: '了',
+                        value: 4,
+                    },
+
+                    {
+                        name: '校验',
+                        value: 1,
+                    },
+
+                    {
+                        name: '必要条件',
+                        value: 1,
+                    },
+
+                    {
+                        name: '哪个',
+                        value: 1,
+                    },
+
+                    {
+                        name: '集线器',
+                        value: 1,
+                    },
+
+                    {
+                        name: '二',
+                        value: 1,
+                    },
+
+                    {
+                        name: '150',
+                        value: 1,
+                    },
+
+                    {
+                        name: '序',
+                        value: 6,
+                    },
+
+                    {
+                        name: '153',
+                        value: 1,
+                    },
+
+                    {
+                        name: '需要',
+                        value: 2,
+                    },
+
+                    {
+                        name: '应',
+                        value: 1,
+                    },
+
+                    {
+                        name: '随机',
+                        value: 1,
+                    },
+
+                    {
+                        name: '越高',
+                        value: 1,
+                    },
+
+                    {
+                        name: '55',
+                        value: 5,
+                    },
+
+                    {
+                        name: '逻辑',
+                        value: 1,
+                    },
+
+                    {
+                        name: '四个',
+                        value: 2,
+                    },
+
+                    {
+                        name: '报',
+                        value: 1,
+                    },
+
+                    {
+                        name: '相加',
+                        value: 1,
+                    },
+
+                    {
+                        name: '度',
+                        value: 1,
+                    },
+
+                    {
+                        name: '缓存',
+                        value: 1,
+                    },
+
+                    {
+                        name: '入学',
+                        value: 1,
+                    },
+
+                    {
+                        name: '主要',
+                        value: 1,
+                    },
+
+                    {
+                        name: '选择题',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'vg',
+                        value: 1,
+                    },
+
+                    {
+                        name: '时间',
+                        value: 17,
+                    },
+
+                    {
+                        name: '物理',
+                        value: 3,
+                    },
+
+                    {
+                        name: '空间',
+                        value: 2,
+                    },
+
+                    {
+                        name: '字母表',
+                        value: 2,
+                    },
+
+                    {
+                        name: '纸',
+                        value: 3,
+                    },
+
+                    {
+                        name: '操作系统',
+                        value: 4,
+                    },
+
+                    {
+                        name: '期间',
+                        value: 1,
+                    },
+
+                    {
+                        name: '61',
+                        value: 1,
+                    },
+
+                    {
+                        name: '下面',
+                        value: 4,
+                    },
+
+                    {
+                        name: '64',
+                        value: 1,
+                    },
+
+                    {
+                        name: '开始',
+                        value: 1,
+                    },
+
+                    {
+                        name: '68',
+                        value: 5,
+                    },
+
+                    {
+                        name: '69',
+                        value: 4,
+                    },
+
+                    {
+                        name: '组',
+                        value: 1,
+                    },
+
+                    {
+                        name: '左右',
+                        value: 1,
+                    },
+
+                    {
+                        name: '能否',
+                        value: 2,
+                    },
+
+                    {
+                        name: '执行',
+                        value: 5,
+                    },
+
+                    {
+                        name: '总计',
+                        value: 1,
+                    },
+
+                    {
+                        name: '保持',
+                        value: 1,
+                    },
+
+                    {
+                        name: '从',
+                        value: 7,
+                    },
+
+                    {
+                        name: '不但',
+                        value: 1,
+                    },
+
+                    {
+                        name: '结',
+                        value: 6,
+                    },
+
+                    {
+                        name: '拓',
+                        value: 1,
+                    },
+
+                    {
+                        name: '180分钟',
+                        value: 1,
+                    },
+
+                    {
+                        name: '6行',
+                        value: 1,
+                    },
+
+                    {
+                        name: '目标',
+                        value: 1,
+                    },
+
+                    {
+                        name: '须知',
+                        value: 1,
+                    },
+
+                    {
+                        name: '深度',
+                        value: 3,
+                    },
+
+                    {
+                        name: '高',
+                        value: 1,
+                    },
+
+                    {
+                        name: '端口',
+                        value: 1,
+                    },
+
+                    {
+                        name: '存在',
+                        value: 2,
+                    },
+
+                    {
+                        name: '73',
+                        value: 4,
+                    },
+
+                    {
+                        name: '连续',
+                        value: 2,
+                    },
+
+                    {
+                        name: '内容',
+                        value: 1,
+                    },
+
+                    {
+                        name: '满',
+                        value: 1,
+                    },
+
+                    {
+                        name: '可能',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'cabdefg',
+                        value: 1,
+                    },
+
+                    {
+                        name: '若',
+                        value: 3,
+                    },
+
+                    {
+                        name: '以',
+                        value: 5,
+                    },
+
+                    {
+                        name: '目',
+                        value: 1,
+                    },
+
+                    {
+                        name: '端',
+                        value: 3,
+                    },
+
+                    {
+                        name: '要求',
+                        value: 1,
+                    },
+
+                    {
+                        name: '尺寸',
+                        value: 1,
+                    },
+
+                    {
+                        name: '局域网',
+                        value: 1,
+                    },
+
+                    {
+                        name: '无法',
+                        value: 1,
+                    },
+
+                    {
+                        name: '即将',
+                        value: 2,
+                    },
+
+                    {
+                        name: '一棵',
+                        value: 1,
+                    },
+
+                    {
+                        name: '84',
+                        value: 1,
+                    },
+
+                    {
+                        name: '图',
+                        value: 6,
+                    },
+
+                    {
+                        name: 'sram',
+                        value: 2,
+                    },
+
+                    {
+                        name: '86',
+                        value: 1,
+                    },
+
+                    {
+                        name: '通过',
+                        value: 1,
+                    },
+
+                    {
+                        name: '满足',
+                        value: 1,
+                    },
+
+                    {
+                        name: '最',
+                        value: 1,
+                    },
+
+                    {
+                        name: '需',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'mod',
+                        value: 1,
+                    },
+
+                    {
+                        name: '冲突',
+                        value: 2,
+                    },
+
+                    {
+                        name: '指',
+                        value: 1,
+                    },
+
+                    {
+                        name: '（',
+                        value: 58,
+                    },
+
+                    {
+                        name: '）',
+                        value: 67,
+                    },
+
+                    {
+                        name: '有',
+                        value: 11,
+                    },
+
+                    {
+                        name: '按',
+                        value: 5,
+                    },
+
+                    {
+                        name: '，',
+                        value: 129,
+                    },
+
+                    {
+                        name: '统一',
+                        value: 1,
+                    },
+
+                    {
+                        name: '．',
+                        value: 57,
+                    },
+
+                    {
+                        name: '式',
+                        value: 3,
+                    },
+
+                    {
+                        name: '顶点',
+                        value: 5,
+                    },
+
+                    {
+                        name: '调度',
+                        value: 7,
+                    },
+
+                    {
+                        name: '大学',
+                        value: 1,
+                    },
+
+                    {
+                        name: '通信',
+                        value: 4,
+                    },
+
+                    {
+                        name: '编',
+                        value: 1,
+                    },
+
+                    {
+                        name: '先来',
+                        value: 3,
+                    },
+
+                    {
+                        name: '5000个柱',
+                        value: 1,
+                    },
+
+                    {
+                        name: '函数',
+                        value: 1,
+                    },
+
+                    {
+                        name: '：',
+                        value: 20,
+                    },
+
+                    {
+                        name: '93',
+                        value: 4,
+                    },
+
+                    {
+                        name: '建立',
+                        value: 1,
+                    },
+
+                    {
+                        name: '94',
+                        value: 5,
+                    },
+
+                    {
+                        name: '；',
+                        value: 3,
+                    },
+
+                    {
+                        name: '结构',
+                        value: 5,
+                    },
+
+                    {
+                        name: '直径',
+                        value: 1,
+                    },
+
+                    {
+                        name: '？',
+                        value: 6,
+                    },
+
+                    {
+                        name: '学科',
+                        value: 9,
+                    },
+
+                    {
+                        name: '线程',
+                        value: 5,
+                    },
+
+                    {
+                        name: 'ffffh',
+                        value: 2,
+                    },
+
+                    {
+                        name: '结果',
+                        value: 2,
+                    },
+
+                    {
+                        name: '在',
+                        value: 14,
+                    },
+
+                    {
+                        name: '之后',
+                        value: 1,
+                    },
+
+                    {
+                        name: '读取',
+                        value: 3,
+                    },
+
+                    {
+                        name: '第',
+                        value: 13,
+                    },
+
+                    {
+                        name: '本',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'priority',
+                        value: 1,
+                    },
+
+                    {
+                        name: '依次',
+                        value: 2,
+                    },
+
+                    {
+                        name: '科目',
+                        value: 9,
+                    },
+
+                    {
+                        name: '间隔',
+                        value: 1,
+                    },
+
+                    {
+                        name: '朴',
+                        value: 1,
+                    },
+
+                    {
+                        name: '过程',
+                        value: 7,
+                    },
+
+                    {
+                        name: '查找',
+                        value: 1,
+                    },
+
+                    {
+                        name: '字段',
+                        value: 2,
+                    },
+
+                    {
+                        name: '硕士',
+                        value: 1,
+                    },
+
+                    {
+                        name: '整个',
+                        value: 2,
+                    },
+
+                    {
+                        name: '请求',
+                        value: 6,
+                    },
+
+                    {
+                        name: '强',
+                        value: 1,
+                    },
+
+                    {
+                        name: '1509',
+                        value: 1,
+                    },
+
+                    {
+                        name: '设在',
+                        value: 1,
+                    },
+
+                    {
+                        name: '叙述',
+                        value: 2,
+                    },
+
+                    {
+                        name: '直接',
+                        value: 2,
+                    },
+
+                    {
+                        name: '到来',
+                        value: 2,
+                    },
+
+                    {
+                        name: '平均',
+                        value: 2,
+                    },
+
+                    {
+                        name: '址',
+                        value: 3,
+                    },
+
+                    {
+                        name: '1101011011',
+                        value: 1,
+                    },
+
+                    {
+                        name: '序号',
+                        value: 1,
+                    },
+
+                    {
+                        name: '初始',
+                        value: 2,
+                    },
+
+                    {
+                        name: 'log',
+                        value: 3,
+                    },
+
+                    {
+                        name: 'pascal',
+                        value: 1,
+                    },
+
+                    {
+                        name: '满分',
+                        value: 1,
+                    },
+
+                    {
+                        name: '为主',
+                        value: 1,
+                    },
+
+                    {
+                        name: '等',
+                        value: 1,
+                    },
+
+                    {
+                        name: '位',
+                        value: 3,
+                    },
+
+                    {
+                        name: '共享',
+                        value: 3,
+                    },
+
+                    {
+                        name: '子',
+                        value: 2,
+                    },
+
+                    {
+                        name: '产生',
+                        value: 1,
+                    },
+
+                    {
+                        name: '网',
+                        value: 1,
+                    },
+
+                    {
+                        name: '当',
+                        value: 1,
+                    },
+
+                    {
+                        name: '电路',
+                        value: 3,
+                    },
+
+                    {
+                        name: '下标',
+                        value: 1,
+                    },
+
+                    {
+                        name: '1750',
+                        value: 1,
+                    },
+
+                    {
+                        name: '既能',
+                        value: 1,
+                    },
+
+                    {
+                        name: '字',
+                        value: 5,
+                    },
+
+                    {
+                        name: '块',
+                        value: 4,
+                    },
+
+                    {
+                        name: '数组',
+                        value: 2,
+                    },
+
+                    {
+                        name: '内核',
+                        value: 1,
+                    },
+
+                    {
+                        name: '已有',
+                        value: 1,
+                    },
+
+                    {
+                        name: '～',
+                        value: 1,
+                    },
+
+                    {
+                        name: '非',
+                        value: 2,
+                    },
+
+                    {
+                        name: '占',
+                        value: 1,
+                    },
+
+                    {
+                        name: '同时',
+                        value: 1,
+                    },
+
+                    {
+                        name: '非线性',
+                        value: 1,
+                    },
+
+                    {
+                        name: '面',
+                        value: 3,
+                    },
+
+                    {
+                        name: '矩阵',
+                        value: 1,
+                    },
+
+                    {
+                        name: '控制',
+                        value: 5,
+                    },
+
+                    {
+                        name: '无效',
+                        value: 1,
+                    },
+
+                    {
+                        name: '来',
+                        value: 1,
+                    },
+
+                    {
+                        name: '通道',
+                        value: 1,
+                    },
+
+                    {
+                        name: '距离',
+                        value: 3,
+                    },
+
+                    {
+                        name: '说法',
+                        value: 2,
+                    },
+
+                    {
+                        name: '关于',
+                        value: 1,
+                    },
+
+                    {
+                        name: '试题',
+                        value: 3,
+                    },
+
+                    {
+                        name: '按照',
+                        value: 1,
+                    },
+
+                    {
+                        name: '16个字',
+                        value: 1,
+                    },
+
+                    {
+                        name: '由于',
+                        value: 1,
+                    },
+
+                    {
+                        name: '存取',
+                        value: 2,
+                    },
+
+                    {
+                        name: '应用题',
+                        value: 1,
+                    },
+
+                    {
+                        name: '卷',
+                        value: 1,
+                    },
+
+                    {
+                        name: '答案',
+                        value: 2,
+                    },
+
+                    {
+                        name: '死',
+                        value: 2,
+                    },
+
+                    {
+                        name: '其中',
+                        value: 2,
+                    },
+
+                    {
+                        name: '同一',
+                        value: 6,
+                    },
+
+                    {
+                        name: '剥夺',
+                        value: 1,
+                    },
+
+                    {
+                        name: '使',
+                        value: 1,
+                    },
+
+                    {
+                        name: '它',
+                        value: 2,
+                    },
+
+                    {
+                        name: '对象',
+                        value: 1,
+                    },
+
+                    {
+                        name: '保密',
+                        value: 1,
+                    },
+
+                    {
+                        name: '到达',
+                        value: 3,
+                    },
+
+                    {
+                        name: '盘面',
+                        value: 1,
+                    },
+
+                    {
+                        name: '不对',
+                        value: 1,
+                    },
+
+                    {
+                        name: '历',
+                        value: 7,
+                    },
+
+                    {
+                        name: '而且',
+                        value: 1,
+                    },
+
+                    {
+                        name: '率',
+                        value: 1,
+                    },
+
+                    {
+                        name: '名称',
+                        value: 9,
+                    },
+
+                    {
+                        name: '处理',
+                        value: 7,
+                    },
+
+                    {
+                        name: 'pstn',
+                        value: 1,
+                    },
+
+                    {
+                        name: '100转',
+                        value: 1,
+                    },
+
+                    {
+                        name: '报文',
+                        value: 1,
+                    },
+
+                    {
+                        name: '1774',
+                        value: 1,
+                    },
+
+                    {
+                        name: '一趟',
+                        value: 1,
+                    },
+
+                    {
+                        name: '不同',
+                        value: 2,
+                    },
+
+                    {
+                        name: '简化',
+                        value: 1,
+                    },
+
+                    {
+                        name: '语言',
+                        value: 1,
+                    },
+
+                    {
+                        name: '编码',
+                        value: 2,
+                    },
+
+                    {
+                        name: '路由器',
+                        value: 9,
+                    },
+
+                    {
+                        name: '延迟',
+                        value: 1,
+                    },
+
+                    {
+                        name: '00111111',
+                        value: 1,
+                    },
+
+                    {
+                        name: '环',
+                        value: 1,
+                    },
+
+                    {
+                        name: '现',
+                        value: 1,
+                    },
+
+                    {
+                        name: '详细',
+                        value: 1,
+                    },
+
+                    {
+                        name: '设计',
+                        value: 1,
+                    },
+
+                    {
+                        name: '共有',
+                        value: 2,
+                    },
+
+                    {
+                        name: '收到',
+                        value: 1,
+                    },
+
+                    {
+                        name: '介质',
+                        value: 5,
+                    },
+
+                    {
+                        name: '周期',
+                        value: 6,
+                    },
+
+                    {
+                        name: '磁道',
+                        value: 1,
+                    },
+
+                    {
+                        name: '宽',
+                        value: 1,
+                    },
+
+                    {
+                        name: '设',
+                        value: 1,
+                    },
+
+                    {
+                        name: '支持',
+                        value: 1,
+                    },
+
+                    {
+                        name: '明码',
+                        value: 1,
+                    },
+
+                    {
+                        name: '进行',
+                        value: 10,
+                    },
+
+                    {
+                        name: '它们',
+                        value: 1,
+                    },
+
+                    {
+                        name: '组成',
+                        value: 1,
+                    },
+
+                    {
+                        name: '又',
+                        value: 1,
+                    },
+
+                    {
+                        name: '队列',
+                        value: 3,
+                    },
+
+                    {
+                        name: '位数',
+                        value: 1,
+                    },
+
+                    {
+                        name: '答题',
+                        value: 1,
+                    },
+
+                    {
+                        name: '以上',
+                        value: 1,
+                    },
+
+                    {
+                        name: '双',
+                        value: 2,
+                    },
+
+                    {
+                        name: '能够',
+                        value: 1,
+                    },
+
+                    {
+                        name: '单项',
+                        value: 1,
+                    },
+
+                    {
+                        name: '每',
+                        value: 5,
+                    },
+
+                    {
+                        name: '以下',
+                        value: 1,
+                    },
+
+                    {
+                        name: '某',
+                        value: 1,
+                    },
+
+                    {
+                        name: '步骤',
+                        value: 1,
+                    },
+
+                    {
+                        name: '向量',
+                        value: 1,
+                    },
+
+                    {
+                        name: '比',
+                        value: 3,
+                    },
+
+                    {
+                        name: '虚拟',
+                        value: 2,
+                    },
+
+                    {
+                        name: '最高',
+                        value: 1,
+                    },
+
+                    {
+                        name: '试',
+                        value: 2,
+                    },
+
+                    {
+                        name: '取',
+                        value: 1,
+                    },
+
+                    {
+                        name: '变',
+                        value: 1,
+                    },
+
+                    {
+                        name: '实现',
+                        value: 5,
+                    },
+
+                    {
+                        name: '信息量',
+                        value: 1,
+                    },
+
+                    {
+                        name: '这',
+                        value: 4,
+                    },
+
+                    {
+                        name: '静态',
+                        value: 1,
+                    },
+
+                    {
+                        name: '简单',
+                        value: 1,
+                    },
+
+                    {
+                        name: 'addr',
+                        value: 4,
+                    },
+
+                    {
+                        name: '中国科学院',
+                        value: 1,
+                    },
+
+                    {
+                        name: '插入',
+                        value: 1,
+                    },
+
+                    {
+                        name: '域',
+                        value: 1,
+                    },
+
+                    {
+                        name: '信',
+                        value: 1,
+                    },
+
+                    {
+                        name: '令牌',
+                        value: 2,
+                    },
+
+                    {
+                        name: 'anylan',
+                        value: 1,
+                    },
+
+                    {
+                        name: '分支',
+                        value: 1,
+                    },
+
+                    {
+                        name: '该',
+                        value: 3,
+                    },
+
+                    {
+                        name: '0列',
+                        value: 1,
+                    },
+
+                    {
+                        name: '只',
+                        value: 1,
+                    },
+
+                    {
+                        name: '快',
+                        value: 1,
+                    },
+
+                    {
+                        name: '短',
+                        value: 2,
+                    },
+
+                    {
+                        name: '连通',
+                        value: 1,
+                    },
+
+                    {
+                        name: '可',
+                        value: 1,
+                    },
+
+                    {
+                        name: '柱',
+                        value: 2,
+                    },
+
+                    {
+                        name: '数据',
+                        value: 13,
+                    },
+
+                    {
+                        name: '工作量',
+                        value: 1,
+                    },
+
+                    {
+                        name: '请',
+                        value: 6,
+                    },
+
+                    {
+                        name: '多重',
+                        value: 3,
+                    },
+
+                    {
+                        name: '多种',
+                        value: 3,
+                    },
+
+                    {
+                        name: '对',
+                        value: 5,
+                    },
+
+                    {
+                        name: '书写',
+                        value: 1,
+                    },
+
+                    {
+                        name: '一跳',
+                        value: 1,
+                    },
+
+                    {
+                        name: '寻',
+                        value: 1,
+                    },
+
+                    {
+                        name: '计算机',
+                        value: 11,
+                    },
+                ]
+            }]
+        });
+    }
 </script>
 </body>
 </html>
