@@ -59,7 +59,7 @@
                 <h2>我把我的学习过程写成了博客</h2>
                 <h2>这是用博客的关键词词频做的词云图</h2>
             </div>
-            <div id="wordCloud" style="width: 100%;height: 1176px"></div>
+            <div id="wordCloud"></div>
             <div class="align-center">
                 <h2>除了编程，我还想把我的兴趣和见闻等等写在这里。。。</h2>
             </div>
@@ -247,6 +247,15 @@
 </div>
 
 <!-- Scripts -->
+<script type="text/javascript">
+    const wordCloud = document.getElementById('wordCloud');
+    wordCloud.style.width = 100 + "%";
+    wordCloud.style.height = wordCloud.offsetWidth + "px";
+
+    const relation = document.getElementById('relation');
+    relation.style.width = 100 + "%";
+    relation.style.height = relation.offsetWidth + "px";
+</script>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/browser.min.js"></script>
 <script src="assets/js/breakpoints.min.js"></script>
