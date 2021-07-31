@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布博客</title>
+    <link rel="stylesheet" href="markdown/css/style.css">
+    <link rel="stylesheet" href="markdown/css/editormd.min.css">
+</head>
+<body>
+<div id="container">
+    <div id="editormd">
+        <textarea id="content" name="content" style="display: none"></textarea>
+    </div>
+</div>
+
+<script src="markdown/js/jquery.min.js"></script>
+<script src="markdown/js/editormd.min.js"></script>
+<script type="text/javascript">
+    const container = document.getElementById('container');
+    container.style.width = 100 + "%";
+    container.style.height = container.offsetWidth * 0.49 + "px";
+
+    let editor;
+    $(function() {
+        editor = editormd("editormd", {
+            width   : "100%",
+            height  : "100%",
+            syncScrolling : "single",
+            path    : "markdown/lib/", //依赖lib文件夹路径
+            emoji : true,
+            taskList : true,
+            tocm     : true,
+            imageUpload: true,
+            imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+            imageUploadURL: "imageUpload"		//上传图片控制器Mapping
+        });
+    });
+</script>
+
+</body>
+</html>
