@@ -1,0 +1,947 @@
+﻿<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java实现矩阵的相关运算</title>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css"/>
+    </noscript>
+    <link rel="stylesheet" href="assets/css/markdowm.css"/>
+</head>
+<body class="stackedit">
+
+<!-- Header -->
+<header id="header">
+    <div class="inner">
+        <!-- Nav -->
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+        <li><a href="index.html">主页</a></li>
+        <li><a href="markdown.html">写博客（无后端）</a></li>
+        <li><a href="generic.html">Ipsum veroeros</a></li>
+        <li><a href="generic.html">Tempus etiam</a></li>
+        <li><a href="generic.html">Consequat dolor</a></li>
+        <li><a href="elements.html">Elements</a></li>
+    </ul>
+</nav>
+<div class="stackedit__html"><h2><a id="1_0"></a>1、余子式</h2>
+    <pre><code class="prism language-java">    <span class="token comment">/**
+     * 求（h，v）位置的余子式
+     * @param matrix
+     * @param h
+     * @param v
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">double</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">confactor</span><span
+                class="token punctuation">(</span><span class="token keyword">double</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span> matrix<span
+                class="token punctuation">,</span><span class="token keyword">int</span> h<span
+                class="token punctuation">,</span><span class="token keyword">int</span> v<span
+                class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">double</span><span class="token punctuation">[</span><span
+                class="token punctuation">]</span><span class="token punctuation">[</span><span
+                class="token punctuation">]</span> result <span class="token operator">=</span> <span
+                class="token keyword">new</span> <span class="token keyword">double</span><span
+                class="token punctuation">[</span>matrix<span class="token punctuation">.</span>length <span
+                class="token operator">-</span> <span class="token number">1</span><span
+                class="token punctuation">]</span><span class="token punctuation">[</span>matrix<span
+                class="token punctuation">[</span><span class="token number">0</span><span
+                class="token punctuation">]</span><span class="token punctuation">.</span>length <span
+                class="token operator">-</span> <span class="token number">1</span><span
+                class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span
+                class="token keyword">int</span> i <span class="token operator">=</span> <span
+                class="token number">0</span><span class="token punctuation">;</span>i <span
+                class="token operator">&lt;</span> result<span class="token punctuation">.</span>length<span
+                class="token punctuation">;</span>i<span class="token operator">++</span><span
+                class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">&lt;</span> h <span
+                class="token operator">-</span> <span class="token number">1</span><span
+                class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span><span
+                class="token keyword">int</span> j <span class="token operator">=</span> <span
+                class="token number">0</span><span class="token punctuation">;</span>j <span
+                class="token operator">&lt;</span> result<span class="token punctuation">[</span>i<span
+                class="token punctuation">]</span><span class="token punctuation">.</span>length<span
+                class="token punctuation">;</span>j<span class="token operator">++</span><span
+                class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token keyword">if</span><span class="token punctuation">(</span>j <span
+                class="token operator">&lt;</span> v <span class="token operator">-</span> <span
+                class="token number">1</span><span class="token punctuation">)</span><span
+                class="token punctuation">{</span>
+                        result<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span
+                class="token punctuation">[</span>j<span class="token punctuation">]</span> <span
+                class="token operator">=</span> matrix<span class="token punctuation">[</span>i<span
+                class="token punctuation">]</span><span class="token punctuation">[</span>j<span
+                class="token punctuation">]</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                    <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                        result<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span
+                class="token punctuation">[</span>j<span class="token punctuation">]</span> <span
+                class="token operator">=</span> matrix<span class="token punctuation">[</span>i<span
+                class="token punctuation">]</span><span class="token punctuation">[</span>j <span
+                class="token operator">+</span> <span class="token number">1</span><span
+                class="token punctuation">]</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span><span
+                class="token keyword">int</span> j <span class="token operator">=</span> <span
+                class="token number">0</span><span class="token punctuation">;</span>j <span
+                class="token operator">&lt;</span> result<span class="token punctuation">[</span>i<span
+                class="token punctuation">]</span><span class="token punctuation">.</span>length<span
+                class="token punctuation">;</span>j<span class="token operator">++</span><span
+                class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token keyword">if</span><span class="token punctuation">(</span>j <span
+                class="token operator">&lt;</span> v <span class="token operator">-</span> <span
+                class="token number">1</span><span class="token punctuation">)</span><span
+                class="token punctuation">{</span>
+                        result<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span
+                class="token punctuation">[</span>j<span class="token punctuation">]</span> <span
+                class="token operator">=</span> matrix<span class="token punctuation">[</span>i <span
+                class="token operator">+</span> <span class="token number">1</span><span
+                class="token punctuation">]</span><span class="token punctuation">[</span>j<span
+                class="token punctuation">]</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                    <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                        result<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span
+                class="token punctuation">[</span>j<span class="token punctuation">]</span> <span
+                class="token operator">=</span> matrix<span class="token punctuation">[</span>i <span
+                class="token operator">+</span> <span class="token number">1</span><span
+                class="token punctuation">]</span><span class="token punctuation">[</span>j <span
+                class="token operator">+</span> <span class="token number">1</span><span
+                class="token punctuation">]</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+    <h2><a id="2_38"></a>2、行列式</h2>
+    <pre><code class="prism language-java">   <span class="token comment">/**
+     * 求行列式
+     * @param matrix
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">double</span> <span
+                class="token function">det</span><span class="token punctuation">(</span><span class="token keyword">double</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span> matrix<span
+                class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">/*
+         * 二维矩阵计算
+         */</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>matrix<span
+                class="token punctuation">.</span>length <span class="token operator">==</span> <span
+                class="token number">2</span><span class="token punctuation">)</span> <span
+                class="token punctuation">{</span>
+            <span class="token keyword">return</span> matrix<span class="token punctuation">[</span><span
+                class="token number">0</span><span class="token punctuation">]</span><span
+                class="token punctuation">[</span><span class="token number">0</span><span
+                class="token punctuation">]</span> <span class="token operator">*</span> matrix<span
+                class="token punctuation">[</span><span class="token number">1</span><span
+                class="token punctuation">]</span><span class="token punctuation">[</span><span
+                class="token number">1</span><span class="token punctuation">]</span> <span
+                class="token operator">-</span> matrix<span class="token punctuation">[</span><span
+                class="token number">0</span><span class="token punctuation">]</span><span
+                class="token punctuation">[</span><span class="token number">1</span><span
+                class="token punctuation">]</span> <span class="token operator">*</span> matrix<span
+                class="token punctuation">[</span><span class="token number">1</span><span
+                class="token punctuation">]</span><span class="token punctuation">[</span><span
+                class="token number">0</span><span class="token punctuation">]</span><span
+                class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">/*
+         * 二维以上的矩阵计算
+         */</span>
+        <span class="token keyword">double</span> result <span class="token operator">=</span> <span
+                class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> num <span class="token operator">=</span> matrix<span
+                class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token keyword">double</span><span class="token punctuation">[</span><span
+                class="token punctuation">]</span> nums <span class="token operator">=</span> <span
+                class="token keyword">new</span> <span class="token keyword">double</span><span
+                class="token punctuation">[</span>num<span class="token punctuation">]</span><span
+                class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span
+                class="token keyword">int</span> i <span class="token operator">=</span> <span
+                class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> matrix<span
+                class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span
+                class="token operator">++</span><span class="token punctuation">)</span> <span
+                class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">%</span> <span
+                class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span
+                class="token punctuation">)</span> <span class="token punctuation">{</span>
+                nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span
+                class="token operator">=</span> matrix<span class="token punctuation">[</span><span
+                class="token number">0</span><span class="token punctuation">]</span><span
+                class="token punctuation">[</span>i<span class="token punctuation">]</span> <span
+                class="token operator">*</span> <span class="token function">det</span><span
+                class="token punctuation">(</span><span class="token function">confactor</span><span
+                class="token punctuation">(</span>matrix<span class="token punctuation">,</span> <span
+                class="token number">1</span><span class="token punctuation">,</span> i<span
+                class="token operator">+</span><span class="token number">1</span><span
+                class="token punctuation">)</span><span class="token punctuation">)</span><span
+                class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token keyword">else</span> <span
+                class="token punctuation">{</span>
+                nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span
+                class="token operator">=</span> <span class="token operator">-</span>matrix<span
+                class="token punctuation">[</span><span class="token number">0</span><span
+                class="token punctuation">]</span><span class="token punctuation">[</span>i<span
+                class="token punctuation">]</span> <span class="token operator">*</span> <span class="token function">det</span><span
+                class="token punctuation">(</span><span class="token function">confactor</span><span
+                class="token punctuation">(</span>matrix<span class="token punctuation">,</span> <span
+                class="token number">1</span><span class="token punctuation">,</span> i<span
+                class="token operator">+</span><span class="token number">1</span><span
+                class="token punctuation">)</span><span class="token punctuation">)</span><span
+                class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span
+                class="token keyword">int</span> i <span class="token operator">=</span> <span
+                class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> matrix<span
+                class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span
+                class="token operator">++</span><span class="token punctuation">)</span> <span
+                class="token punctuation">{</span>
+            result <span class="token operator">+=</span> nums<span class="token punctuation">[</span>i<span
+                class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+</code></pre>
+    <h2><a id="3_74"></a>3、转置</h2>
+    <pre><code class="prism language-java">    <span class="token comment">/**
+     * 求矩阵的转置
+     * @param matrix
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">double</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">transpose</span><span
+                class="token punctuation">(</span><span class="token keyword">double</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span> matrix<span
+                class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">double</span><span class="token punctuation">[</span><span
+                class="token punctuation">]</span><span class="token punctuation">[</span><span
+                class="token punctuation">]</span> result <span class="token operator">=</span> <span
+                class="token keyword">new</span> <span class="token keyword">double</span><span
+                class="token punctuation">[</span>matrix<span class="token punctuation">[</span><span
+                class="token number">0</span><span class="token punctuation">]</span><span
+                class="token punctuation">.</span>length<span class="token punctuation">]</span><span
+                class="token punctuation">[</span>matrix<span class="token punctuation">.</span>length<span
+                class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span
+                class="token keyword">int</span> i <span class="token operator">=</span> <span
+                class="token number">0</span><span class="token punctuation">;</span>i <span
+                class="token operator">&lt;</span> matrix<span class="token punctuation">.</span>length<span
+                class="token punctuation">;</span>i<span class="token operator">++</span><span
+                class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span
+                class="token operator">=</span> <span class="token number">0</span><span
+                class="token punctuation">;</span>j <span class="token operator">&lt;</span> matrix<span
+                class="token punctuation">[</span>i<span class="token punctuation">]</span><span
+                class="token punctuation">.</span>length<span class="token punctuation">;</span>j<span
+                class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                result<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span
+                class="token punctuation">[</span>i<span class="token punctuation">]</span> <span
+                class="token operator">=</span> matrix<span class="token punctuation">[</span>i<span
+                class="token punctuation">]</span><span class="token punctuation">[</span>j<span
+                class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+    <h2><a id="4_92"></a>4、逆</h2>
+    <pre><code class="prism language-java">    <span class="token comment">/**
+     * 求矩阵的逆
+     * @param matrix
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">double</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">inverse</span><span
+                class="token punctuation">(</span><span class="token keyword">double</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span> matrix<span
+                class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">double</span><span class="token punctuation">[</span><span
+                class="token punctuation">]</span><span class="token punctuation">[</span><span
+                class="token punctuation">]</span> result <span class="token operator">=</span> <span
+                class="token keyword">new</span> <span class="token keyword">double</span><span
+                class="token punctuation">[</span>matrix<span class="token punctuation">.</span>length<span
+                class="token punctuation">]</span><span class="token punctuation">[</span>matrix<span
+                class="token punctuation">[</span><span class="token number">0</span><span
+                class="token punctuation">]</span><span class="token punctuation">.</span>length<span
+                class="token punctuation">]</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">double</span> detA <span class="token operator">=</span> <span
+                class="token function">det</span><span class="token punctuation">(</span>matrix<span
+                class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span
+                class="token keyword">int</span> i <span class="token operator">=</span> <span
+                class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> matrix<span
+                class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span
+                class="token operator">++</span><span class="token punctuation">)</span> <span
+                class="token punctuation">{</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span
+                class="token operator">=</span> <span class="token number">0</span><span
+                class="token punctuation">;</span> j <span class="token operator">&lt;</span> matrix<span
+                class="token punctuation">[</span><span class="token number">0</span><span
+                class="token punctuation">]</span><span class="token punctuation">.</span>length<span
+                class="token punctuation">;</span> j<span class="token operator">++</span><span
+                class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span><span
+                class="token punctuation">(</span>i <span class="token operator">+</span> j<span
+                class="token punctuation">)</span> <span class="token operator">%</span> <span
+                class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span
+                class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    result<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span
+                class="token punctuation">[</span>j<span class="token punctuation">]</span> <span
+                class="token operator">=</span> <span class="token function">det</span><span
+                class="token punctuation">(</span><span class="token function">confactor</span><span
+                class="token punctuation">(</span>matrix<span class="token punctuation">,</span> i<span
+                class="token operator">+</span><span class="token number">1</span><span
+                class="token punctuation">,</span> j<span class="token operator">+</span><span
+                class="token number">1</span><span class="token punctuation">)</span><span
+                class="token punctuation">)</span> <span class="token operator">/</span> detA<span
+                class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token keyword">else</span> <span
+                class="token punctuation">{</span>
+                    result<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span
+                class="token punctuation">[</span>j<span class="token punctuation">]</span> <span
+                class="token operator">=</span> <span class="token operator">-</span><span
+                class="token function">det</span><span class="token punctuation">(</span><span class="token function">confactor</span><span
+                class="token punctuation">(</span>matrix<span class="token punctuation">,</span> i<span
+                class="token operator">+</span><span class="token number">1</span><span
+                class="token punctuation">,</span> j<span class="token operator">+</span><span
+                class="token number">1</span><span class="token punctuation">)</span><span
+                class="token punctuation">)</span> <span class="token operator">/</span> detA<span
+                class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        result <span class="token operator">=</span> <span class="token function">transpose</span><span
+                class="token punctuation">(</span>result<span class="token punctuation">)</span><span
+                class="token punctuation">;</span>
+
+        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+    <h2><a id="5_120"></a>5、减法</h2>
+    <pre><code class="prism language-java">    <span class="token comment">/**
+     * 矩阵的减法
+     * @param matrix1
+     * @param matrix2
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">double</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">subtract</span><span
+                class="token punctuation">(</span><span class="token keyword">double</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span> matrix1<span
+                class="token punctuation">,</span><span class="token keyword">double</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span> matrix2<span
+                class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> m1 <span class="token operator">=</span> matrix1<span
+                class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> n1 <span class="token operator">=</span> matrix1<span
+                class="token punctuation">[</span><span class="token number">0</span><span
+                class="token punctuation">]</span><span class="token punctuation">.</span>length<span
+                class="token punctuation">;</span>
+        <span class="token keyword">int</span> m2 <span class="token operator">=</span> matrix2<span
+                class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> n2 <span class="token operator">=</span> matrix2<span
+                class="token punctuation">[</span><span class="token number">0</span><span
+                class="token punctuation">]</span><span class="token punctuation">.</span>length<span
+                class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>m1 <span
+                class="token operator">!=</span> m2 <span class="token operator">||</span> n1 <span
+                class="token operator">!=</span> n2<span class="token punctuation">)</span><span
+                class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">null</span><span
+                class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">double</span><span class="token punctuation">[</span><span
+                class="token punctuation">]</span><span class="token punctuation">[</span><span
+                class="token punctuation">]</span> result <span class="token operator">=</span> <span
+                class="token keyword">new</span> <span class="token keyword">double</span><span
+                class="token punctuation">[</span>m1<span class="token punctuation">]</span><span
+                class="token punctuation">[</span>n1<span class="token punctuation">]</span><span
+                class="token punctuation">;</span>
+
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span
+                class="token operator">=</span> <span class="token number">0</span><span
+                class="token punctuation">;</span>i <span class="token operator">&lt;</span> m1<span
+                class="token punctuation">;</span>i<span class="token operator">++</span><span
+                class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">for</span><span class="token punctuation">(</span><span
+                class="token keyword">int</span> j <span class="token operator">=</span> <span
+                class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n1<span
+                class="token punctuation">;</span>j<span class="token operator">++</span><span
+                class="token punctuation">)</span><span class="token punctuation">{</span>
+                    result<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span
+                class="token punctuation">[</span>j<span class="token punctuation">]</span> <span
+                class="token operator">=</span> matrix1<span class="token punctuation">[</span>i<span
+                class="token punctuation">]</span><span class="token punctuation">[</span>j<span
+                class="token punctuation">]</span> <span class="token operator">-</span> matrix2<span
+                class="token punctuation">[</span>i<span class="token punctuation">]</span><span
+                class="token punctuation">[</span>j<span class="token punctuation">]</span><span
+                class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+    <h2><a id="6_150"></a>6、数乘</h2>
+    <pre><code class="prism language-java">    <span class="token comment">/**
+     * 矩阵的数量乘法（数乘）
+     * @param matrix
+     * @param a
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">double</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">scalarMult</span><span
+                class="token punctuation">(</span><span class="token keyword">double</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span> matrix<span
+                class="token punctuation">,</span><span class="token keyword">double</span> a<span
+                class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">double</span><span class="token punctuation">[</span><span
+                class="token punctuation">]</span><span class="token punctuation">[</span><span
+                class="token punctuation">]</span> result <span class="token operator">=</span> <span
+                class="token keyword">new</span> <span class="token keyword">double</span><span
+                class="token punctuation">[</span>matrix<span class="token punctuation">.</span>length<span
+                class="token punctuation">]</span><span class="token punctuation">[</span>matrix<span
+                class="token punctuation">[</span><span class="token number">0</span><span
+                class="token punctuation">]</span><span class="token punctuation">.</span>length<span
+                class="token punctuation">]</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span
+                class="token keyword">int</span> i <span class="token operator">=</span> <span
+                class="token number">0</span><span class="token punctuation">;</span>i <span
+                class="token operator">&lt;</span> matrix<span class="token punctuation">.</span>length<span
+                class="token punctuation">;</span>i<span class="token operator">++</span><span
+                class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span
+                class="token operator">=</span> <span class="token number">0</span><span
+                class="token punctuation">;</span>j <span class="token operator">&lt;</span> matrix<span
+                class="token punctuation">[</span>i<span class="token punctuation">]</span><span
+                class="token punctuation">.</span>length<span class="token punctuation">;</span>j<span
+                class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                result<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span
+                class="token punctuation">[</span>j<span class="token punctuation">]</span> <span
+                class="token operator">=</span> a <span class="token operator">*</span> matrix<span
+                class="token punctuation">[</span>i<span class="token punctuation">]</span><span
+                class="token punctuation">[</span>j<span class="token punctuation">]</span><span
+                class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+    <h2><a id="7_171"></a>7、乘法</h2>
+    <pre><code class="prism language-java">    <span class="token comment">/**
+     * 矩阵的乘法
+     * @param matrix1
+     * @param matrix2
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">double</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">vectorMult</span><span
+                class="token punctuation">(</span><span class="token keyword">double</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span> matrix1<span
+                class="token punctuation">,</span><span class="token keyword">double</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span> matrix2<span
+                class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> m1 <span class="token operator">=</span> matrix1<span
+                class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> n1 <span class="token operator">=</span> matrix1<span
+                class="token punctuation">[</span><span class="token number">0</span><span
+                class="token punctuation">]</span><span class="token punctuation">.</span>length<span
+                class="token punctuation">;</span>
+        <span class="token keyword">int</span> m2 <span class="token operator">=</span> matrix2<span
+                class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> n2 <span class="token operator">=</span> matrix2<span
+                class="token punctuation">[</span><span class="token number">0</span><span
+                class="token punctuation">]</span><span class="token punctuation">.</span>length<span
+                class="token punctuation">;</span>
+
+        <span class="token comment">// 第一个矩阵的列数不等于第二个矩阵的行数时矩阵的乘法无意义</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>n1 <span
+                class="token operator">!=</span> m2<span class="token punctuation">)</span><span
+                class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">null</span><span
+                class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">double</span><span class="token punctuation">[</span><span
+                class="token punctuation">]</span><span class="token punctuation">[</span><span
+                class="token punctuation">]</span> result <span class="token operator">=</span> <span
+                class="token keyword">new</span> <span class="token keyword">double</span><span
+                class="token punctuation">[</span>m1<span class="token punctuation">]</span><span
+                class="token punctuation">[</span>n2<span class="token punctuation">]</span><span
+                class="token punctuation">;</span>
+
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span
+                class="token operator">=</span> <span class="token number">0</span><span
+                class="token punctuation">;</span>i <span class="token operator">&lt;</span> m1<span
+                class="token punctuation">;</span>i<span class="token operator">++</span><span
+                class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span><span
+                class="token keyword">int</span> j <span class="token operator">=</span> <span
+                class="token number">0</span><span class="token punctuation">;</span>j <span
+                class="token operator">&lt;</span> n2<span class="token punctuation">;</span>j<span
+                class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token keyword">for</span> <span class="token punctuation">(</span><span
+                class="token keyword">int</span> k <span class="token operator">=</span> <span
+                class="token number">0</span><span class="token punctuation">;</span>k <span
+                class="token operator">&lt;</span> n1<span class="token punctuation">;</span>k<span
+                class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                        result<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span
+                class="token punctuation">[</span>j<span class="token punctuation">]</span> <span
+                class="token operator">+=</span> matrix1<span class="token punctuation">[</span>i<span
+                class="token punctuation">]</span><span class="token punctuation">[</span>k<span
+                class="token punctuation">]</span> <span class="token operator">*</span> matrix2<span
+                class="token punctuation">[</span>k<span class="token punctuation">]</span><span
+                class="token punctuation">[</span>j<span class="token punctuation">]</span><span
+                class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+    <h2><a id="8_205"></a>8、邻接矩阵的入度</h2>
+    <pre><code class="prism language-java">    <span class="token comment">/**
+     * 求邻接矩阵的入度
+     * @param matrix
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">double</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">inDegree</span><span
+                class="token punctuation">(</span><span class="token keyword">double</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span> matrix<span
+                class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> len <span class="token operator">=</span> matrix<span
+                class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token keyword">double</span><span class="token punctuation">[</span><span
+                class="token punctuation">]</span> result <span class="token operator">=</span> <span
+                class="token keyword">new</span> <span class="token keyword">double</span><span
+                class="token punctuation">[</span>len<span class="token punctuation">]</span><span
+                class="token punctuation">;</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span
+                class="token keyword">int</span> i <span class="token operator">=</span> <span
+                class="token number">0</span><span class="token punctuation">;</span>i <span
+                class="token operator">&lt;</span> len<span class="token punctuation">;</span>i<span
+                class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">double</span> degree <span class="token operator">=</span> <span
+                class="token number">0.0</span><span class="token punctuation">;</span><span
+                class="token comment">// 入度</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span
+                class="token operator">=</span> <span class="token number">0</span><span
+                class="token punctuation">;</span>j<span class="token operator">&lt;</span>matrix<span
+                class="token punctuation">[</span>i<span class="token punctuation">]</span><span
+                class="token punctuation">.</span>length<span class="token punctuation">;</span>j<span
+                class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>matrix<span
+                class="token punctuation">[</span>j<span class="token punctuation">]</span><span
+                class="token punctuation">[</span>i<span class="token punctuation">]</span> <span
+                class="token operator">!=</span> <span class="token number">0.0</span><span
+                class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">// 遍历到非0元素则入度+1</span>
+                    degree<span class="token operator">++</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            result<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span
+                class="token operator">=</span> degree<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+    <h2><a id="9_230"></a>9、邻接矩阵的出度</h2>
+    <pre><code class="prism language-java">    <span class="token comment">/**
+     * 求邻接矩阵的出度
+     * @param matrix
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">double</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">outDegree</span><span
+                class="token punctuation">(</span><span class="token keyword">double</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span> matrix<span
+                class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> len <span class="token operator">=</span> matrix<span
+                class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token keyword">double</span><span class="token punctuation">[</span><span
+                class="token punctuation">]</span> result <span class="token operator">=</span> <span
+                class="token keyword">new</span> <span class="token keyword">double</span><span
+                class="token punctuation">[</span>len<span class="token punctuation">]</span><span
+                class="token punctuation">;</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span
+                class="token keyword">int</span> i <span class="token operator">=</span> <span
+                class="token number">0</span><span class="token punctuation">;</span>i <span
+                class="token operator">&lt;</span> len<span class="token punctuation">;</span>i<span
+                class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">double</span> degree <span class="token operator">=</span> <span
+                class="token number">0.0</span><span class="token punctuation">;</span><span
+                class="token comment">// 出度</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span
+                class="token operator">=</span> <span class="token number">0</span><span
+                class="token punctuation">;</span>j <span class="token operator">&lt;</span> matrix<span
+                class="token punctuation">[</span>i<span class="token punctuation">]</span><span
+                class="token punctuation">.</span>length<span class="token punctuation">;</span>j<span
+                class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>matrix<span
+                class="token punctuation">[</span>i<span class="token punctuation">]</span><span
+                class="token punctuation">[</span>j<span class="token punctuation">]</span> <span
+                class="token operator">!=</span> <span class="token number">0.0</span><span
+                class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">// 遍历到非0元素则出度+1</span>
+                    degree<span class="token operator">++</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            result<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span
+                class="token operator">=</span> degree<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+    <h2><a id="10_255"></a>10、求矩阵的最大特征值和其对应的特征向量</h2>
+    <pre><code class="prism language-java"><span class="token keyword">import</span> <span
+            class="token namespace">java<span class="token punctuation">.</span>math<span
+            class="token punctuation">.</span></span><span class="token class-name">BigDecimal</span><span
+            class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 求矩阵的最大特征值和对应的特征向量
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">EigenValue</span> <span
+                class="token punctuation">{</span>
+
+    <span class="token comment">// 平均随机一致性指标</span>
+    <span class="token keyword">private</span> <span class="token keyword">double</span><span class="token punctuation">[</span><span
+                class="token punctuation">]</span> RI <span class="token operator">=</span> <span
+                class="token punctuation">{</span>
+            <span class="token number">0.00</span><span class="token punctuation">,</span> <span class="token number">0.00</span><span
+                class="token punctuation">,</span> <span class="token number">0.52</span><span
+                class="token punctuation">,</span> <span class="token number">0.89</span><span
+                class="token punctuation">,</span> <span class="token number">1.12</span><span
+                class="token punctuation">,</span>
+            <span class="token number">1.26</span><span class="token punctuation">,</span> <span class="token number">1.36</span><span
+                class="token punctuation">,</span> <span class="token number">1.41</span><span
+                class="token punctuation">,</span> <span class="token number">1.46</span><span
+                class="token punctuation">,</span> <span class="token number">1.49</span><span
+                class="token punctuation">,</span>
+            <span class="token number">1.52</span><span class="token punctuation">,</span> <span class="token number">1.24</span><span
+                class="token punctuation">,</span> <span class="token number">1.56</span><span
+                class="token punctuation">,</span> <span class="token number">1.58</span><span
+                class="token punctuation">,</span> <span class="token number">1.59</span><span
+                class="token punctuation">,</span>
+            <span class="token number">1.5943</span><span class="token punctuation">,</span><span class="token number">1.6064</span><span
+                class="token punctuation">,</span><span class="token number">1.6133</span><span
+                class="token punctuation">,</span><span class="token number">1.6207</span><span
+                class="token punctuation">,</span><span class="token number">1.6292</span><span
+                class="token punctuation">,</span>
+            <span class="token number">1.6385</span><span class="token punctuation">,</span><span class="token number">1.6403</span><span
+                class="token punctuation">,</span><span class="token number">1.6462</span><span
+                class="token punctuation">,</span><span class="token number">1.6497</span><span
+                class="token punctuation">,</span><span class="token number">1.6556</span><span
+                class="token punctuation">,</span>
+            <span class="token number">1.6587</span><span class="token punctuation">,</span><span class="token number">1.6631</span><span
+                class="token punctuation">,</span><span class="token number">1.6670</span><span
+                class="token punctuation">,</span><span class="token number">1.6693</span><span
+                class="token punctuation">,</span><span class="token number">1.6724</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 随机一致性比率</span>
+    <span class="token keyword">private</span> <span class="token keyword">double</span> CR <span
+                class="token operator">=</span> <span class="token number">0.0</span><span
+                class="token punctuation">;</span>
+
+    <span class="token comment">// 最大特征值</span>
+    <span class="token keyword">private</span> <span class="token keyword">double</span> lamta <span
+                class="token operator">=</span> <span class="token number">0.0</span><span
+                class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">double</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">weight</span><span
+                class="token punctuation">(</span><span class="token keyword">double</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span><span
+                class="token punctuation">[</span><span class="token punctuation">]</span> matrix<span
+                class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> len <span class="token operator">=</span> matrix<span
+                class="token punctuation">.</span>length<span class="token punctuation">;</span>
+
+        <span class="token keyword">double</span><span class="token punctuation">[</span><span
+                class="token punctuation">]</span> w0 <span class="token operator">=</span> <span class="token keyword">new</span> <span
+                class="token keyword">double</span><span class="token punctuation">[</span>len<span
+                class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">// 初始向量Wk</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span
+                class="token keyword">int</span> i <span class="token operator">=</span> <span
+                class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span
+                class="token punctuation">;</span> i<span class="token operator">++</span><span
+                class="token punctuation">)</span> <span class="token punctuation">{</span>
+            w0<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span
+                class="token operator">=</span> <span class="token number">1.0</span> <span
+                class="token operator">/</span> len<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">double</span><span class="token punctuation">[</span><span
+                class="token punctuation">]</span> w1 <span class="token operator">=</span> <span class="token keyword">new</span> <span
+                class="token keyword">double</span><span class="token punctuation">[</span>len<span
+                class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">// 一般向量W（k+1）</span>
+
+        <span class="token keyword">double</span><span class="token punctuation">[</span><span
+                class="token punctuation">]</span> w2 <span class="token operator">=</span> <span class="token keyword">new</span> <span
+                class="token keyword">double</span><span class="token punctuation">[</span>len<span
+                class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">// W（k+1）的归一化向量</span>
+
+        <span class="token keyword">double</span> sum <span class="token operator">=</span> <span class="token number">1.0</span><span
+                class="token punctuation">;</span>
+
+        <span class="token keyword">double</span> d <span class="token operator">=</span> <span
+                class="token number">1.0</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">double</span> delt <span class="token operator">=</span> <span class="token number">0.00001</span><span
+                class="token punctuation">;</span><span class="token comment">// 误差</span>
+
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>d <span class="token operator">&gt;</span> delt<span
+                class="token punctuation">)</span> <span class="token punctuation">{</span>
+            d <span class="token operator">=</span> <span class="token number">0.0</span><span
+                class="token punctuation">;</span>
+            sum <span class="token operator">=</span> <span class="token number">0</span><span
+                class="token punctuation">;</span>
+
+            <span class="token comment">// 获取向量</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span
+                class="token operator">=</span> <span class="token number">0</span><span
+                class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span
+                class="token punctuation">;</span> i<span class="token operator">++</span><span
+                class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">double</span> temp <span class="token operator">=</span> <span
+                class="token number">0.0</span><span class="token punctuation">;</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span><span
+                class="token keyword">int</span> j <span class="token operator">=</span> <span
+                class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> len<span
+                class="token punctuation">;</span> j<span class="token operator">++</span><span
+                class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    temp <span class="token operator">+=</span> matrix<span class="token punctuation">[</span>i<span
+                class="token punctuation">]</span><span class="token punctuation">[</span>j<span
+                class="token punctuation">]</span> <span class="token operator">*</span> w0<span
+                class="token punctuation">[</span>j<span class="token punctuation">]</span><span
+                class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                w1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span
+                class="token operator">=</span> temp<span class="token punctuation">;</span>
+                sum <span class="token operator">+=</span> w1<span class="token punctuation">[</span>i<span
+                class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token comment">// 向量归一化</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span
+                class="token operator">=</span> <span class="token number">0</span><span
+                class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span
+                class="token punctuation">;</span> i<span class="token operator">++</span><span
+                class="token punctuation">)</span> <span class="token punctuation">{</span>
+                w2<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span
+                class="token operator">=</span> w1<span class="token punctuation">[</span>i<span
+                class="token punctuation">]</span> <span class="token operator">/</span> sum<span
+                class="token punctuation">;</span>
+
+                d <span class="token operator">=</span> <span class="token class-name">Math</span><span
+                class="token punctuation">.</span><span class="token function">max</span><span
+                class="token punctuation">(</span><span class="token class-name">Math</span><span
+                class="token punctuation">.</span><span class="token function">abs</span><span
+                class="token punctuation">(</span>w2<span class="token punctuation">[</span>i<span
+                class="token punctuation">]</span> <span class="token operator">-</span> w0<span
+                class="token punctuation">[</span>i<span class="token punctuation">]</span><span
+                class="token punctuation">)</span><span class="token punctuation">,</span> d<span
+                class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 最大差值</span>
+
+                w0<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span
+                class="token operator">=</span> w2<span class="token punctuation">[</span>i<span
+                class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">// 用于下次迭代使用</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// 计算矩阵最大特征值lamta，一致性指标CI，随机一致性指标RI</span>
+        lamta <span class="token operator">=</span> <span class="token number">0.0</span><span
+                class="token punctuation">;</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span
+                class="token keyword">int</span> i <span class="token operator">=</span> <span
+                class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span
+                class="token punctuation">;</span> i<span class="token operator">++</span><span
+                class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>w1<span
+                class="token punctuation">[</span>i<span class="token punctuation">]</span> <span
+                class="token operator">!=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> w0<span
+                class="token punctuation">[</span>i<span class="token punctuation">]</span> <span
+                class="token operator">!=</span> <span class="token number">0</span><span
+                class="token punctuation">)</span> <span class="token punctuation">{</span>
+                lamta <span class="token operator">+=</span> w1<span class="token punctuation">[</span>i<span
+                class="token punctuation">]</span> <span class="token operator">/</span> <span
+                class="token punctuation">(</span>len <span class="token operator">*</span> w0<span
+                class="token punctuation">[</span>i<span class="token punctuation">]</span><span
+                class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">double</span> CI <span class="token operator">=</span> <span
+                class="token punctuation">(</span>lamta <span class="token operator">-</span> len<span
+                class="token punctuation">)</span> <span class="token operator">/</span> <span
+                class="token punctuation">(</span>len <span class="token operator">-</span> <span
+                class="token number">1</span><span class="token punctuation">)</span><span
+                class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>RI<span class="token punctuation">[</span>len <span
+                class="token operator">-</span> <span class="token number">1</span><span
+                class="token punctuation">]</span> <span class="token operator">!=</span> <span
+                class="token number">0</span><span class="token punctuation">)</span> <span
+                class="token punctuation">{</span>
+            CR <span class="token operator">=</span> CI <span class="token operator">/</span> RI<span
+                class="token punctuation">[</span>len <span class="token operator">-</span> <span
+                class="token number">1</span><span class="token punctuation">]</span><span
+                class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+
+        <span class="token comment">// 四舍五入处理</span>
+        lamta <span class="token operator">=</span> <span class="token function">round</span><span
+                class="token punctuation">(</span>lamta<span class="token punctuation">,</span> <span
+                class="token number">3</span><span class="token punctuation">)</span><span
+                class="token punctuation">;</span>
+        CI <span class="token operator">=</span> <span class="token class-name">Math</span><span
+                class="token punctuation">.</span><span class="token function">abs</span><span
+                class="token punctuation">(</span><span class="token function">round</span><span
+                class="token punctuation">(</span>CI<span class="token punctuation">,</span> <span class="token number">3</span><span
+                class="token punctuation">)</span><span class="token punctuation">)</span><span
+                class="token punctuation">;</span>
+        CR <span class="token operator">=</span>  <span class="token class-name">Math</span><span
+                class="token punctuation">.</span><span class="token function">abs</span><span
+                class="token punctuation">(</span><span class="token function">round</span><span
+                class="token punctuation">(</span>CR<span class="token punctuation">,</span> <span class="token number">3</span><span
+                class="token punctuation">)</span><span class="token punctuation">)</span><span
+                class="token punctuation">;</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span
+                class="token keyword">int</span> i <span class="token operator">=</span> <span
+                class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span
+                class="token punctuation">;</span> i<span class="token operator">++</span><span
+                class="token punctuation">)</span> <span class="token punctuation">{</span>
+            w0<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span
+                class="token operator">=</span> <span class="token function">round</span><span
+                class="token punctuation">(</span>w0<span class="token punctuation">[</span>i<span
+                class="token punctuation">]</span><span class="token punctuation">,</span> <span
+                class="token number">18</span><span class="token punctuation">)</span><span
+                class="token punctuation">;</span>
+            w1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span
+                class="token operator">=</span> <span class="token function">round</span><span
+                class="token punctuation">(</span>w1<span class="token punctuation">[</span>i<span
+                class="token punctuation">]</span><span class="token punctuation">,</span> <span
+                class="token number">18</span><span class="token punctuation">)</span><span
+                class="token punctuation">;</span>
+            w2<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span
+                class="token operator">=</span> <span class="token function">round</span><span
+                class="token punctuation">(</span>w2<span class="token punctuation">[</span>i<span
+                class="token punctuation">]</span><span class="token punctuation">,</span> <span
+                class="token number">18</span><span class="token punctuation">)</span><span
+                class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> w2<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">getLamta</span><span
+                class="token punctuation">(</span><span class="token punctuation">)</span><span
+                class="token punctuation">{</span>
+        <span class="token keyword">return</span> lamta<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">double</span> <span class="token function">round</span><span
+                class="token punctuation">(</span><span class="token keyword">double</span> value<span
+                class="token punctuation">,</span> <span class="token keyword">int</span> scale<span
+                class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>scale <span
+                class="token operator">&lt;</span> <span class="token number">0</span><span
+                class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span
+                class="token class-name">IllegalArgumentException</span><span class="token punctuation">(</span>
+                    <span class="token string">"The scale must be a positive integer or zero"</span><span
+                class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token class-name">BigDecimal</span> b <span class="token operator">=</span> <span
+                class="token keyword">new</span> <span class="token class-name">BigDecimal</span><span
+                class="token punctuation">(</span><span class="token class-name">Double</span><span
+                class="token punctuation">.</span><span class="token function">toString</span><span
+                class="token punctuation">(</span>value<span class="token punctuation">)</span><span
+                class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">BigDecimal</span> one <span class="token operator">=</span> <span
+                class="token keyword">new</span> <span class="token class-name">BigDecimal</span><span
+                class="token punctuation">(</span><span class="token string">"1"</span><span
+                class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> b<span class="token punctuation">.</span><span class="token function">divide</span><span
+                class="token punctuation">(</span>one<span class="token punctuation">,</span> scale<span
+                class="token punctuation">,</span> <span class="token class-name">BigDecimal</span><span
+                class="token punctuation">.</span>ROUND_HALF_UP<span class="token punctuation">)</span><span
+                class="token punctuation">.</span><span class="token function">doubleValue</span><span
+                class="token punctuation">(</span><span class="token punctuation">)</span><span
+                class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script type="text/javascript" src="assets/js/spidernet.js"></script>
+</body>
+
+</html>

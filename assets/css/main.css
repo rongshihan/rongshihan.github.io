@@ -312,6 +312,66 @@ input, select, textarea {
 		text-align: right;
 	}
 
+/* Container */
+
+.container {
+	margin: 0 auto;
+	max-width: calc(100% - 50px);
+	width: 1200px;
+}
+
+.container.medium {
+	width: 900px;
+}
+
+@media screen and (max-width: 1680px) {
+
+	.container {
+		width: 1200px;
+	}
+
+	.container.medium {
+		width: 900px;
+	}
+
+}
+
+@media screen and (max-width: 1280px) {
+
+	.container {
+		width: 960px;
+	}
+
+	.container.medium {
+		width: 720px;
+	}
+
+}
+
+@media screen and (max-width: 980px) {
+
+	.container {
+		width: 100%;
+	}
+
+	.container.medium {
+		width: 75%;
+	}
+
+}
+
+@media screen and (max-width: 736px) {
+
+	.container {
+		width: 100%;
+		max-width: calc(100% - 30px);
+	}
+
+	.container.medium {
+		width: 100%;
+	}
+
+}
 /* Row */
 
 	.row {
@@ -2369,6 +2429,56 @@ input, select, textarea {
 				}
 
 			}
+
+/* Wrappers */
+
+.wrapper {
+    background-image: url("images/bg.png");
+    //box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+    padding: 0 0 16em 0;
+    text-align: left;
+}
+
+.wrapper.style1 {
+    background-image: none;
+    background-color: #fff;
+}
+
+.wrapper.style2 {
+    background-color: #fafafa;
+    text-shadow: 1px 1px 0px #fff;
+}
+
+.wrapper.style3 {
+    background-color: #f4f4f4;
+    text-shadow: 1px 1px 0px #fff;
+}
+
+.wrapper.style4 {
+    background-color: #303030;
+    color: #999;
+    text-shadow: -1px -1px 0px #181818;
+}
+
+.wrapper.style4 h1, .wrapper.style4 h2, .wrapper.style4 h3, .wrapper.style4 h4, .wrapper.style4 h5, .wrapper.style4 h6 {
+    color: #fff;
+}
+
+.wrapper.style4 form input[type=text],
+.wrapper.style4 form input[type=password],
+.wrapper.style4 form select,
+.wrapper.style4 form textarea {
+    border: none;
+    background: #282828;
+}
+
+.wrapper.style4 form input[type=text]:focus,
+.wrapper.style4 form input[type=password]:focus,
+.wrapper.style4 form select:focus,
+.wrapper.style4 form textarea:focus {
+    background: #252525;
+}
+
 
 /* Table */
 

@@ -99,7 +99,7 @@ const option = {
             {
                 name: "Adobe",
                 draggable: true,
-                symbolSize: 20,
+                symbolSize: 10,
                 itemStyle: {
                     color: get_color()
                 }
@@ -124,7 +124,16 @@ const option = {
             {
                 name: "Git",
                 draggable: true,
-                symbolSize: 20,
+                symbolSize: 10,
+                itemStyle: {
+                    color: get_color()
+                }
+            },
+            <!-- markdown -->
+            {
+                name: "markdown",
+                draggable: true,
+                symbolSize: 10,
                 itemStyle: {
                     color: get_color()
                 }
@@ -133,7 +142,7 @@ const option = {
             {
                 name: "XML",
                 draggable: true,
-                symbolSize: 20,
+                symbolSize: 10,
                 itemStyle: {
                     color: get_color()
                 }
@@ -142,7 +151,7 @@ const option = {
             {
                 name: "Linux",
                 draggable: true,
-                symbolSize: 20,
+                symbolSize: 10,
                 itemStyle: {
                     color: get_color()
                 }
@@ -151,7 +160,7 @@ const option = {
             {
                 name: "UML",
                 draggable: true,
-                symbolSize: 20,
+                symbolSize: 10,
                 itemStyle: {
                     color: get_color()
                 }
@@ -160,7 +169,7 @@ const option = {
             {
                 name: "Matlab",
                 draggable: true,
-                symbolSize: 20,
+                symbolSize: 10,
                 itemStyle: {
                     color: get_color()
                 }
@@ -169,7 +178,7 @@ const option = {
             {
                 name: "软件测试",
                 draggable: true,
-                symbolSize: 20,
+                symbolSize: 10,
                 itemStyle: {
                     color: get_color()
                 }
@@ -202,7 +211,7 @@ const option = {
             {
                 name: "C++",
                 draggable: true,
-                symbolSize: 20,
+                symbolSize: 10,
                 itemStyle: {
                     color: get_color()
                 }
@@ -211,7 +220,7 @@ const option = {
             {
                 name: "C#",
                 draggable: true,
-                symbolSize: 20,
+                symbolSize: 10,
                 itemStyle: {
                     color: get_color()
                 }
@@ -244,7 +253,7 @@ const option = {
             {
                 name: "Java",
                 draggable: true,
-                symbolSize: 20,
+                symbolSize: 10,
                 itemStyle: {
                     color: get_color()
                 }
@@ -285,7 +294,7 @@ const option = {
             {
                 name: "数据库",
                 draggable: true,
-                symbolSize: 20,
+                symbolSize: 10,
                 itemStyle: {
                     color: get_color()
                 }
@@ -293,7 +302,7 @@ const option = {
             {
                 name: "关系数据库",
                 draggable: true,
-                symbolSize: 20,
+                symbolSize: 10,
                 itemStyle: {
                     color: get_color()
                 }
@@ -301,7 +310,7 @@ const option = {
             {
                 name: "NoSQL",
                 draggable: true,
-                symbolSize: 20,
+                symbolSize: 10,
                 itemStyle: {
                     color: get_color()
                 }
@@ -342,7 +351,7 @@ const option = {
             {
                 name: "前端",
                 draggable: true,
-                symbolSize: 20,
+                symbolSize: 10,
                 itemStyle: {
                     color: get_color()
                 }
@@ -391,7 +400,7 @@ const option = {
             {
                 name: "后端",
                 draggable: true,
-                symbolSize: 20,
+                symbolSize: 10,
                 itemStyle: {
                     color: get_color()
                 }
@@ -424,7 +433,7 @@ const option = {
             {
                 name: "中间件技术",
                 draggable: true,
-                symbolSize: 20,
+                symbolSize: 10,
                 itemStyle: {
                     color: get_color()
                 }
@@ -441,7 +450,7 @@ const option = {
             {
                 name: "Python",
                 draggable: true,
-                symbolSize: 20,
+                symbolSize: 10,
                 itemStyle: {
                     color: get_color()
                 }
@@ -474,7 +483,7 @@ const option = {
             {
                 name: "机器学习",
                 draggable: true,
-                symbolSize: 20,
+                symbolSize: 10,
                 itemStyle: {
                     color: get_color()
                 }
