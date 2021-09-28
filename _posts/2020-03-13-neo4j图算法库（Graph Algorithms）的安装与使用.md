@@ -2,7 +2,7 @@
 layout: post
 title:  neo4j图算法库（Graph Algorithms）的安装与使用
 categories: neo4j
-tags: neo4j
+tags: [NoSQL, neo4j]
 ---
 
 **注意：Neo4j已经弃用Graph Algorithms，相关算法已经整合到Graph Data Science Library中，下载和使用方法类似，本文不再修改。**
